@@ -1,0 +1,36 @@
+# Large data files
+data/
+
+# Keep folder structure
+!data/.gitkeep
+!data/*/README.md
+
+# Model outputs
+runs/
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+
+# Logs
+logs/
+*.log
+wandb/
+
+# Environments
+env/
+__pycache__/
+*.pyc
+*.egg-info/
+.ipynb_checkpoints/
+
+# External repos
+repos/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
