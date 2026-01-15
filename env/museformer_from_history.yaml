@@ -1,0 +1,34 @@
+name: museformer
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - pip
+
+  # build / common deps
+  - cmake
+  - cython
+  - gcc_linux-64
+  - gxx_linux-64
+  - make
+  - pkg-config
+  - git
+
+  # core
+  - numpy=1.24
+  - pandas
+  - music21
+  - ipykernel
+  - jupyterlab
+
+  # torch + cuda
+  - pytorch=2.1.*
+  - pytorch-cuda=11.8
+
+  # pip-managed deps
+  - pip:
+      - miditoolkit
+      - triton==2.1.0

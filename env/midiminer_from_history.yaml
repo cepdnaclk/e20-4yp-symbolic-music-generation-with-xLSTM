@@ -1,0 +1,10 @@
+name: midiminer
+channels:
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+dependencies:
+  - pip
+  - python=3.10
+  - ipykernel
+  - jupyterlab
+prefix: /home/e20363/miniconda3/envs/midiminer

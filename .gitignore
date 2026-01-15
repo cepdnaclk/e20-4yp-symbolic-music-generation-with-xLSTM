@@ -18,7 +18,6 @@ logs/
 wandb/
 
 # Environments
-env/
 __pycache__/
 *.pyc
 *.egg-info/
