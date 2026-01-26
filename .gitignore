@@ -13,7 +13,7 @@ checkpoints/
 *.ckpt
 
 # Logs
-logs/
+# logs/
 *.log
 wandb/
 
@@ -40,6 +40,8 @@ notebooks/xLSTM/generated_music/
 # MuseScore Studio binaries and installers
 MuseScore-Studio*
 *.AppImage
+*.dat
+musescore/
 
 assets/
 
