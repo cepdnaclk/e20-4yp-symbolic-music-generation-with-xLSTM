@@ -1,0 +1,24 @@
+<MidiOptions>
+  <QuantValue>2</QuantValue>
+  <VoiceCount>3</VoiceCount>
+
+  <Duplets>false</Duplets>
+  <Triplets>true</Triplets>
+  <Quadruplets>true</Quadruplets>
+  <Quintuplets>true</Quintuplets>
+  <Septuplets>true</Septuplets>
+  <Nonuplets>true</Nonuplets>
+
+  <HumanPerformance>false</HumanPerformance>
+  <MeasureCount2xLess>false</MeasureCount2xLess>
+
+  <SplitStaff>false</SplitStaff>
+  <ClefChanges>false</ClefChanges>
+
+  <SimplifyDurations>true</SimplifyDurations>
+  <ShowStaccato>true</ShowStaccato>
+  <DottedNotes>true</DottedNotes>
+  <RecognizePickupBar>true</RecognizePickupBar>
+
+  <Swing>0</Swing>
+</MidiOptions>

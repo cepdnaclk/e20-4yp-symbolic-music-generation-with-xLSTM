@@ -34,3 +34,12 @@ repos/
 .DS_Store
 Thumbs.db
 
+*.mid
+notebooks/xLSTM/generated_music/
+
+# MuseScore Studio binaries and installers
+MuseScore-Studio*
+*.AppImage
+
+assets/
+

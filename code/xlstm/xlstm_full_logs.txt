@@ -1,0 +1,81 @@
+e20037@ada:/scratch1/e20-fyp-xlstm-music-generation/e20fyptemp1/fyp-musicgen/code/xlstm$ source ~/miniconda/etc/profile.d/co
+nda.sh
+e20037@ada:/scratch1/e20-fyp-xlstm-music-generation/e20fyptemp1/fyp-musicgen/code/xlstm$ conda activate xlstm
+(xlstm) e20037@ada:/scratch1/e20-fyp-xlstm-music-generation/e20fyptemp1/fyp-musicgen/code/xlstm$ wandb login
+wandb: Currently logged in as: haritha037 (haritha037-university-of-peradeniya). Use `wandb login --relogin` to force relogi
+n
+(xlstm) e20037@ada:/scratch1/e20-fyp-xlstm-music-generation/e20fyptemp1/fyp-musicgen/code/xlstm$ accelerate launch train.py
+configs/lmd_remigen_xlstm.yaml
+The following values were not passed to `accelerate launch` and had defaults used instead:
+        `--num_processes` was set to a value of `3`
+                More than one GPU was found, enabling multi-GPU training.
+                If this was unintended please pass in `--num_processes=1`.
+        `--num_machines` was set to a value of `1`
+        `--mixed_precision` was set to a value of `'no'`
+        `--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+Traceback (most recent call last):
+  File "/scratch1/e20-fyp-xlstm-music-generation/e20fyptemp1/fyp-musicgen/code/xlstm/train.py", line 41, in <module>
+    from source.utilities import display_logo, human_readable_number, load_configs, validate_config, is_torch_compile_ready,
+ model_from_config, save_model
+ModuleNotFoundError: No module named 'source'
+Traceback (most recent call last):
+  File "/scratch1/e20-fyp-xlstm-music-generation/e20fyptemp1/fyp-musicgen/code/xlstm/train.py", line 41, in <module>
+    from source.utilities import display_logo, human_readable_number, load_configs, validate_config, is_torch_compile_ready,
+ model_from_config, save_model
+ModuleNotFoundError: No module named 'source'
+Traceback (most recent call last):
+  File "/scratch1/e20-fyp-xlstm-music-generation/e20fyptemp1/fyp-musicgen/code/xlstm/train.py", line 41, in <module>
+    from source.utilities import display_logo, human_readable_number, load_configs, validate_config, is_torch_compile_ready,
+ model_from_config, save_model
+ModuleNotFoundError: No module named 'source'
+W0115 09:55:06.554000 128659631003136 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 3370815 closing
+signal SIGTERM
+E0115 09:55:06.668000 128659631003136 torch/distributed/elastic/multiprocessing/api.py:833] failed (exitcode: 1) local_rank:
+ 0 (pid: 3370814) of binary: /home/e20037/miniconda/envs/xlstm/bin/python3.11
+Traceback (most recent call last):
+  File "/home/e20037/miniconda/envs/xlstm/bin/accelerate", line 7, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/e20037/miniconda/envs/xlstm/lib/python3.11/site-packages/accelerate/commands/accelerate_cli.py", line 48, in m
+ain
+    args.func(args)
+  File "/home/e20037/miniconda/envs/xlstm/lib/python3.11/site-packages/accelerate/commands/launch.py", line 1097, in launch_
+command
+    multi_gpu_launcher(args)
+  File "/home/e20037/miniconda/envs/xlstm/lib/python3.11/site-packages/accelerate/commands/launch.py", line 734, in multi_gp
+u_launcher
+    distrib_run.run(args)
+  File "/home/e20037/miniconda/envs/xlstm/lib/python3.11/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/home/e20037/miniconda/envs/xlstm/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 133, in __ca
+ll__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/e20037/miniconda/envs/xlstm/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 264, in laun
+ch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError:
+============================================================
+train.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-01-15_09:55:06
+  host      : ada
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 3370816)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-01-15_09:55:06
+  host      : ada
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 3370814)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+(xlstm) e20037@ada:/scratch1/e20-fyp-xlstm-music-generation/e20fyptemp1/fyp-musicgen/code/xlstm$ conda activate xlstm
+

@@ -1,0 +1,63 @@
+training:
+  model_name: "lmd_remigen_xlstm_baseline"
+
+  # Batch size: Start conservative (memory constraints with longer sequences)
+  batch_size: 8  # Reduced from 16 due to longer sequences
+
+  # Learning rate: Standard for sequence modeling
+  lr: 0.001  # 1e-3 (xLSTM paper uses this for comparable models)
+  lr_warmup_steps: "10%"  # Standard warmup
+  lr_decay_until_steps: "auto"
+  lr_decay_factor: 0.001  # Decay to 1e-6
+
+  # Regularization
+  weight_decay: 0.1  # xLSTM paper recommendation
+
+  # Mixed precision (critical for efficiency)
+  amp_precision: bfloat16
+  weight_precision: float32
+  enable_mixed_precision: true
+
+  # Training duration: More epochs needed for larger dataset
+  num_epochs: 15  # 27,667 songs, batch_size 8 = ~3,458 steps/epoch
+                  # Total: ~34,580 steps (comparable to Museformer's training)
+
+  output_dir: "output/lmd_remigen_xlstm"
+  save_every_step: 1000  # Save every ~0.3 epochs
+  log_every_step: 50
+  wandb_project: "lmd_remigen_xlstm"
+  torch_compile: false  # Set true if using PyTorch 2.0+
+
+model:
+  # Architecture: Scaled up from JSFakes to match Museformer's capacity
+  num_blocks: 12  # Increased from 4 (more capacity for complex music)
+  embedding_dim: 256  # Increased from 64 (larger vocab needs more dimensions)
+
+  # mLSTM configuration
+  mlstm_block:
+    mlstm:
+      num_heads: 4  # Standard for this embedding dim
+      conv1d_kernel_size: 4
+
+  # sLSTM configuration
+  slstm_block:
+    slstm:
+      num_heads: 4
+      conv1d_kernel_size: 4
+
+  # Mixed architecture: sLSTM at positions [3, 6, 9]
+  slstm_at: [3, 6, 9]  # Every 3rd block uses sLSTM
+
+  # Context length: Match Museformer and xLSTM standard
+  context_length: 2048  # Can handle ~10% of average song
+
+dataset:
+  hugging_face_ids: []
+  # Local file paths
+  local_train: "/scratch1/e20-fyp-xlstm-music-generation/e20fyptemp1/fyp-musicgen/data/lmd_preprocessed/splits/train.txt"
+  local_valid: "/scratch1/e20-fyp-xlstm-music-generation/e20fyptemp1/fyp-musicgen/data/lmd_preprocessed/splits/valid.txt"
+  local_test: "/scratch1/e20-fyp-xlstm-music-generation/e20fyptemp1/fyp-musicgen/data/lmd_preprocessed/splits/test.txt"
+
+tokenizer:
+  type: "whitespace"
+  fill_token: "[EOS]"
