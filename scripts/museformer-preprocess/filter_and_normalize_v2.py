@@ -25,7 +25,7 @@ from collections import defaultdict
 
 # Import configuration
 try:
-    import filter_config as config
+    import filter_config_v2 as config
 except ImportError:
     print("ERROR: filter_config.py not found!")
     print("Please ensure filter_config.py is in the same directory as this script.")
