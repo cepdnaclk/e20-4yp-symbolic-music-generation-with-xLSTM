@@ -16,11 +16,11 @@ import midiprocessor as mp
 
 class MusicGenerator:
     """Handles music generation with xLSTM model"""
-
+    
     def __init__(self, model_path, context_length=2048, device="cuda"):
         """
         Initialize the generator.
-
+        
         Args:
             model_path: Path to trained model
             context_length: Context window for generation (can exceed training length)
@@ -35,21 +35,21 @@ class MusicGenerator:
         self.device = device
         self.context_length = context_length
         print(f"✓ Model loaded (context: {context_length} tokens)")
-
-    def generate(self,
+        
+    def generate(self, 
                  prompt="s-9 o-0 t-38",
                  temperature=0.8,
                  max_tokens=2048,
                  verbose=True):
         """
         Generate a single music sequence.
-
+        
         Args:
             prompt: Starting REMIGEN tokens
             temperature: Sampling temperature (0.5-1.5)
             max_tokens: Total tokens to generate (including prompt)
             verbose: Print progress
-
+            
         Returns:
             Dictionary with tokens and metadata
         """
@@ -58,162 +58,124 @@ class MusicGenerator:
             print(f"   Prompt: {prompt[:60]}...")
             print(f"   Max tokens: {max_tokens}")
             print(f"   Temperature: {temperature}")
-
+        
         # Generate
         output_dict = self.model.generate(
             prompt=prompt,
             temperature=temperature,
-            max_length=max_tokens,
+            max_length=max_tokens,  # FIXED: this is total length, not delta
             end_tokens=[],
             forbidden_tokens=["[PAD]", "[EOS]"],
             return_structured_output=True
         )
-
+        
         # Extract and filter tokens
         tokens_raw = output_dict["output"]
         tokens_list = tokens_raw.split()
-
+        
         # Filter: keep only valid REMIGEN tokens (format: prefix-value)
         valid_tokens = [t for t in tokens_list if '-' in t and not t.startswith('[')]
-
+        
         if verbose:
             invalid_count = len(tokens_list) - len(valid_tokens)
             bars = sum(1 for t in valid_tokens if t == "b-1")
             print(f"✓ Generated {len(valid_tokens)} tokens ({bars} bars)")
             if invalid_count > 0:
                 print(f"   Filtered {invalid_count} invalid tokens")
-
+        
         return {
             "tokens": " ".join(valid_tokens),
             "num_tokens": len(valid_tokens),
             "bars": sum(1 for t in valid_tokens if t == "b-1")
         }
-
-    def _find_last_bar_index(self, tokens_list):
-        """
-        Find the index of the last 'b-1' token.
-
-        Args:
-            tokens_list: List of token strings
-
-        Returns:
-            Index of last 'b-1', or None if not found
-        """
-        for i in range(len(tokens_list) - 1, -1, -1):
-            if tokens_list[i] == "b-1":
-                return i
-        return None
-
+    
     def generate_long(self,
-                      prompt="s-9 o-0 t-38",
+                      prompt="s-9 o-0 t-38", 
                       temperature=0.8,
                       target_bars=32,
-                      max_iterations=50,
+                      chunk_tokens=1024,
+                      max_iterations=20,
                       verbose=True):
         """
-        Generate long sequences by bar-aware chunking.
-
-        Strategy:
-        1. Generate chunks of ~400 new tokens (2-3 bars)
-        2. Always cut at last complete bar (b-1)
-        3. Use last 1600 tokens as context for continuity
-        4. This ensures NO incomplete triplets or orphan tokens
-
+        Generate long sequences by chunking (avoids OOM).
+        
+        Key insight: Generate in fixed-size chunks, using only recent context
+        as prompt for next chunk (sliding window approach).
+        
         Args:
             prompt: Starting tokens
             temperature: Sampling temperature
-            target_bars: Stop after N bars
+            target_bars: Stop after N bars (or None for max_iterations)
+            chunk_tokens: Tokens per chunk
             max_iterations: Maximum chunks to generate
             verbose: Print progress
-
+            
         Returns:
             Dictionary with tokens and metadata
         """
         if verbose:
-            print(f"🎵 Long generation (bar-aware chunking)...")
-            print(f"   Target: {target_bars} bars")
-            print(f"   Strategy: Generate 2-3 bars per iteration, cut at b-1")
-
+            print(f"🎵 Long generation (chunked)...")
+            print(f"   Target: {target_bars} bars" if target_bars else f"   Max iterations: {max_iterations}")
+            print(f"   Chunk size: {chunk_tokens} tokens")
+        
         all_tokens = prompt.split()
         total_bars = sum(1 for t in all_tokens if t == "b-1")
-
-        # Parameters tuned for REMIGEN (avg 158 tokens/bar from Museformer)
-        CONTEXT_SIZE = 3400  # ~10 bars of context
-        NEW_TOKENS = 600     # ~2-3 bars per iteration
-
+        
         for iteration in range(max_iterations):
+            # Use sliding window: last N tokens as context
+            # This prevents context from growing unbounded
+            window_size = min(self.context_length - chunk_tokens - 100, len(all_tokens))
+            context = " ".join(all_tokens[-window_size:])
+            
             if verbose:
                 print(f"\n📝 Iteration {iteration + 1}/{max_iterations}")
-
-            # Step 1: Prepare context (last CONTEXT_SIZE tokens)
-            if len(all_tokens) > CONTEXT_SIZE:
-                context_tokens = all_tokens[-CONTEXT_SIZE:]
-            else:
-                context_tokens = all_tokens
-
-            context = " ".join(context_tokens)
-
-            if verbose:
-                print(f"   Context: {len(context_tokens)} tokens ({sum(1 for t in context_tokens if t == 'b-1')} bars)")
-
-            # Step 2: Generate chunk (context + ~400 new tokens)
-            target_length = len(context_tokens) + NEW_TOKENS
-
+                print(f"   Context: {len(context.split())} tokens")
+            
+            # Generate next chunk
             chunk_result = self.generate(
                 prompt=context,
                 temperature=temperature,
-                max_tokens=target_length,
+                max_tokens=len(context.split()) + chunk_tokens,
                 verbose=False
             )
-
-            # Step 3: Extract only NEW tokens
-            chunk_tokens = chunk_result["tokens"].split()
-
-            if len(chunk_tokens) <= len(context_tokens):
+            
+            # Extract only NEW tokens (after the context)
+            chunk_tokens_list = chunk_result["tokens"].split()
+            context_tokens_list = context.split()
+            
+            # Find where new content starts
+            if len(chunk_tokens_list) > len(context_tokens_list):
+                new_tokens = chunk_tokens_list[len(context_tokens_list):]
+                all_tokens.extend(new_tokens)
+                
+                # Count new bars
+                new_bars = sum(1 for t in new_tokens if t == "b-1")
+                total_bars += new_bars
+                
+                if verbose:
+                    print(f"   Added: {len(new_tokens)} tokens ({new_bars} bars)")
+                    print(f"   Total: {len(all_tokens)} tokens ({total_bars} bars)")
+                
+                # Check stopping condition
+                if target_bars and total_bars >= target_bars:
+                    if verbose:
+                        print(f"\n✓ Reached target: {total_bars} bars")
+                    break
+            else:
                 if verbose:
                     print(f"⚠️  No new tokens generated, stopping")
                 break
-
-            new_tokens = chunk_tokens[len(context_tokens):]
-
-            # Step 4: Find last complete bar in new tokens
-            last_bar_idx = self._find_last_bar_index(new_tokens)
-
-            if last_bar_idx is None:
-                if verbose:
-                    print(f"⚠️  No complete bar (b-1) found in new tokens, stopping")
-                break
-
-            # Step 5: Take only complete bars (up to and including last b-1)
-            complete_new_tokens = new_tokens[:last_bar_idx + 1]
-            all_tokens.extend(complete_new_tokens)
-
-            # Count bars
-            new_bars = sum(1 for t in complete_new_tokens if t == "b-1")
-            total_bars += new_bars
-
-            if verbose:
-                print(f"   Generated: {len(new_tokens)} tokens")
-                print(f"   Kept (complete bars): {len(complete_new_tokens)} tokens ({new_bars} bars)")
-                print(f"   Total: {len(all_tokens)} tokens ({total_bars} bars)")
-
-            # Step 6: Check stopping condition
-            if total_bars >= target_bars:
-                if verbose:
-                    print(f"\n✓ Reached target: {total_bars} bars")
-                break
-
-            # Clear CUDA cache
+            
+            # Clear CUDA cache after each iteration
             if self.device == "cuda":
-                import torch
                 torch.cuda.empty_cache()
-
+        
         final_tokens = " ".join(all_tokens)
-
+        
         if verbose:
             print(f"\n✓ Generation complete!")
             print(f"   Final: {len(all_tokens)} tokens, {total_bars} bars")
-
+        
         return {
             "tokens": final_tokens,
             "num_tokens": len(all_tokens),
