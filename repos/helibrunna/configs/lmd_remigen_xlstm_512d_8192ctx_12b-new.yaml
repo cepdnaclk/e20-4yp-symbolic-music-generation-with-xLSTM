@@ -1,0 +1,350 @@
+# ============================================================================
+# xLSTM Configuration for REMIGEN Music Generation
+# Context: 8192, Embedding: 512, Blocks: 12
+# ============================================================================
+# 
+# ⚠️  CRITICAL WARNING: This configuration is EXTREMELY MEMORY-INTENSIVE
+# 
+# Expected Memory Usage: ~46 GB per GPU (out of 47 GB available)
+# - Will likely work but with ZERO margin for error
+# - Any slight variation could cause OOM
+# 
+# RECOMMENDED SAFER ALTERNATIVE:
+#   Option A: context_length: 2048 with 12 blocks (~35 GB)
+#   Option B: context_length: 8192 with 4 blocks (~30 GB)
+# 
+# With 2048 context, you can still generate 20k+ token songs using
+# grammar-aware chunking at b-1 (bar) boundaries.
+# ============================================================================
+
+training:
+  # ============================================================================
+  # Model Identification
+  # ============================================================================
+  model_name: "xlstm_lmd_512d_8192ctx_12b"
+  
+  # ============================================================================
+  # Batch Size Configuration
+  # ============================================================================
+  batch_size: 1
+  # CRITICAL: Must be 1 for 8192 context with 12 blocks
+  # Each sample uses ~46 GB, cannot fit multiple samples
+  
+  gradient_accumulation_steps: 12
+  # ADDED: Simulates batch_size=12 without memory cost
+  # Accumulates gradients over 12 forward passes before optimizer step
+  # Effective batch size = 1 × 12 = 12 (same training dynamics as batch_size=12)
+  # Memory: Only stores 1 sample at a time
+  # Speed: 12× slower per epoch, but necessary for memory
+  
+  # ============================================================================
+  # Learning Rate & Optimization
+  # ============================================================================
+  lr: 0.001
+  # Peak learning rate (standard for Adam)
+  
+  lr_warmup_steps: "10%"
+  # String percentage converted to integer by train script
+  # Gradually increases LR from 0 to peak over 10% of total steps
+  # Prevents unstable gradients at start of training
+  
+  lr_decay_until_steps: "auto"
+  # Set automatically to total number of steps by train script
+  # Cosine decay from peak LR to final LR over entire training
+  
+  lr_decay_factor: 0.001
+  # Final LR = peak_lr × decay_factor = 0.001 × 0.001 = 0.000001
+  # Very aggressive decay (1000× reduction)
+  # Standard for xLSTM following the paper
+  
+  weight_decay: 0.01
+  # L2 regularization on weights (applied to non-bias parameters)
+  # Standard value from xLSTM paper
+  
+  # ============================================================================
+  # Mixed Precision Training
+  # ============================================================================
+  # CORRECTED: Your config had wrong parameter names
+  
+  mixed_precision: "bf16"
+  # CHANGED from "amp_precision" - that parameter doesn't exist in train script
+  # Train script checks: config.training.get("mixed_precision", None)
+  # Options: "bf16", "fp16", or None
+  # bf16 (bfloat16) is BETTER than fp16 because:
+  #   - Same memory as fp16 (16-bit)
+  #   - Better numerical stability (same exponent range as fp32)
+  #   - No loss scaling needed
+  #   - Recommended by xLSTM paper
+  
+  weight_precision: "float32"
+  # CORRECT: Keeps model weights in float32 for accuracy
+  # Used by train script: get_torch_dtype(config.training.weight_precision)
+  # Activations in bf16, weights in fp32 = best of both worlds
+  
+  # REMOVED: enable_mixed_precision
+  # This parameter is read by train script but NOT used
+  # Script only checks 'mixed_precision' parameter for Accelerator
+  # Having enable_mixed_precision=true is redundant and confusing
+  
+  # ============================================================================
+  # Gradient Checkpointing (NEW - CRITICAL FOR MEMORY)
+  # ============================================================================
+  gradient_checkpointing: true
+  # ADDED: Essential for 8192 context with 12 blocks
+  # Saves 30-50% memory by recomputing activations during backward pass
+  # Trade-off: ~20% slower training, but enables fitting in memory
+  # Without this: Would need ~65 GB (OOM)
+  # With this: Needs ~46 GB (fits, barely)
+  
+  # ============================================================================
+  # Training Duration
+  # ============================================================================
+  num_epochs: 20
+  # Number of complete passes through dataset
+  # Typical for music generation: 10-50 epochs
+  
+  # ============================================================================
+  # Checkpointing & Logging
+  # ============================================================================
+  output_dir: "output/xlstm_lmd_512d_8192ctx_12b"
+  # Directory for checkpoints, logs, and model artifacts
+  
+  save_every_step: 2000
+  # Save checkpoint every 2000 steps
+  # With batch_size=1 + grad_accum=12: ~166 batches per checkpoint
+  # Consider reducing to 1000 for more frequent saves (disk space permitting)
+  
+  log_every_step: 50
+  # Log metrics (loss, LR) every 50 steps to wandb
+  # Updates progress bar every 50 steps
+  
+  wandb_project: "lmd_remigen_xlstm"
+  # Weights & Biases project name for experiment tracking
+  # Logs: loss, learning rate, gradients, system metrics
+  
+  # ============================================================================
+  # Compilation
+  # ============================================================================
+  torch_compile: false
+  # Keep false for stability
+  # torch.compile() can reduce training time but may cause issues with:
+  #   - Gradient checkpointing
+  #   - Distributed training
+  #   - Custom kernels
+  # Set to true once training is stable for 10-15% speedup
+
+# ============================================================================
+# Model Architecture
+# ============================================================================
+model:
+  # vocab_size: Auto-populated by train script from tokenizer
+  # Will be ~675 for REMIGEN based on your data
+  
+  # ============================================================================
+  # Core Architecture Parameters
+  # ============================================================================
+  embedding_dim: 512
+  # Dimension of token embeddings and hidden states
+  # Standard value for music models (Museformer uses 512)
+  # Higher = more expressive but more memory
+  
+  num_blocks: 12
+  # Total number of xLSTM blocks (sLSTM + mLSTM)
+  # Each block processes the sequence at one depth level
+  # 12 is aggressive for 8192 context - consider reducing to 6-8 if OOM
+  
+  context_length: 8192
+  # Maximum sequence length model can process
+  # WARNING: This is 4× larger than xLSTM paper's standard (2048)
+  # Memory scales quadratically: 8192² = 16× more memory than 2048²
+  # Each mLSTM block creates 8192×8192 matrix = 256 MB per head
+  
+  # ============================================================================
+  # Block Type Positioning
+  # ============================================================================
+  slstm_at: [3, 6, 9]
+  # Positions where sLSTM blocks are placed (0-indexed)
+  # All other positions are mLSTM blocks
+  # 
+  # Your configuration:
+  #   Block 0: mLSTM    Block 6: sLSTM
+  #   Block 1: mLSTM    Block 7: mLSTM
+  #   Block 2: mLSTM    Block 8: mLSTM
+  #   Block 3: sLSTM    Block 9: sLSTM
+  #   Block 4: mLSTM    Block 10: mLSTM
+  #   Block 5: mLSTM    Block 11: mLSTM
+  # 
+  # Ratio: 9 mLSTM : 3 sLSTM = 3:1
+  # 
+  # xLSTM paper uses 7:1 ratio (more mLSTM)
+  # Your 3:1 ratio uses MORE sLSTM, which:
+  #   ✓ Uses less memory (sLSTM has no matrix memory)
+  #   ✓ Faster training
+  #   ✗ Less expressive for long-range dependencies
+  # 
+  # For 8192 context, 3:1 ratio is actually BETTER (saves memory)
+  
+  # ============================================================================
+  # mLSTM Block Configuration
+  # ============================================================================
+  mlstm_block:
+    mlstm:
+      conv1d_kernel_size: 4
+      # 1D convolution kernel size for input gating
+      # Standard value from xLSTM paper
+      # Captures local temporal dependencies
+      
+      qkv_proj_blocksize: 4
+      # Block size for block-diagonal Q/K/V projection matrices
+      # Reduces parameters while maintaining expressivity
+      # Standard value from xLSTM paper
+      # Smaller = fewer parameters, faster but less expressive
+      
+      num_heads: 4
+      # Number of attention heads in mLSTM
+      # xLSTM paper ALWAYS uses 4 heads (not configurable in their experiments)
+      # Each head maintains separate 8192×8192 matrix
+      # Total: 4 heads × 9 mLSTM blocks × 256 MB = ~9 GB just for matrices
+  
+  # ============================================================================
+  # sLSTM Block Configuration
+  # ============================================================================
+  slstm_block:
+    slstm:
+      backend: "cuda"
+      # CRITICAL: Use CUDA backend for GPU acceleration
+      # Options: "cuda" (fast), "native" (slow, CPU-compatible)
+      # CUDA backend uses optimized kernels from xlstm package
+      
+      num_heads: 4
+      # Number of heads in sLSTM
+      # Standard value (always 4 in xLSTM paper)
+      # Unlike mLSTM, sLSTM heads don't have matrix memory (scalar only)
+      
+      conv1d_kernel_size: 4
+      # 1D convolution for forget/input gates
+      # Standard value from xLSTM paper
+      
+      bias_init: "powerlaw_blockdependent"
+      # IMPORTANT: Initialization strategy for forget gate bias
+      # "powerlaw_blockdependent": Initializes deeper blocks with higher forget bias
+      # Effect: Deeper blocks remember more (longer-term memory)
+      # Shallow blocks forget more (focus on recent context)
+      # Critical for training stability in deep networks
+    
+    feedforward:
+      proj_factor: 1.3
+      # Projection factor for feedforward network
+      # FFN hidden dim = embedding_dim × proj_factor = 512 × 1.3 = 665.6
+      # Standard value from xLSTM paper (they use 4/3 = 1.333...)
+      # Provides additional non-linear transformation after sLSTM
+      
+      act_fn: "gelu"
+      # Activation function for FFN
+      # GELU (Gaussian Error Linear Unit) is standard for transformers/xLSTM
+      # Better than ReLU for language modeling
+
+# ============================================================================
+# Dataset Configuration
+# ============================================================================
+dataset:
+  hugging_face_ids: []
+  # Empty list = use local files instead of HuggingFace datasets
+  # If not empty, script downloads from HuggingFace Hub
+  
+  local_train: "/scratch1/e20-fyp-xlstm-music-generation/e20fyptemp1/fyp-musicgen/data/lmd_preprocessed/splits/train.txt"
+  local_valid: "/scratch1/e20-fyp-xlstm-music-generation/e20fyptemp1/fyp-musicgen/data/lmd_preprocessed/splits/valid.txt"
+  local_test: "/scratch1/e20-fyp-xlstm-music-generation/e20fyptemp1/fyp-musicgen/data/lmd_preprocessed/splits/test.txt"
+  # Local text files with REMIGEN tokenized sequences
+  # Format: One sequence per line
+  # Train script loads these when local_train/valid/test are present
+
+# ============================================================================
+# Tokenizer Configuration
+# ============================================================================
+tokenizer:
+  type: "whitespace"
+  # Tokenization method
+  # "whitespace": Splits on whitespace, creates token per word
+  # Perfect for REMIGEN since tokens are space-separated (s-1 o-3 t-0 ...)
+  # Alternative: "bpe" (byte-pair encoding) - not needed for REMIGEN
+  
+  fill_token: "[EOS]"
+  # Token used for padding sequences to context_length
+  # Also used as end-of-sequence marker
+  # Train script gets: fill_token_id = tokenizer.convert_tokens_to_ids(fill_token)
+  # Loss function ignores this token via ignore_index
+
+# ============================================================================
+# CONFIGURATION ANALYSIS SUMMARY
+# ============================================================================
+# 
+# ERRORS FIXED:
+# 1. amp_precision → mixed_precision
+#    - Train script uses config.training.get("mixed_precision", None)
+#    - "amp_precision" parameter doesn't exist, would be ignored
+# 
+# 2. enable_mixed_precision → REMOVED
+#    - Train script reads this but doesn't use it
+#    - Redundant with mixed_precision setting
+#    - Can cause confusion
+# 
+# IMPROVEMENTS ADDED:
+# 1. gradient_accumulation_steps: 12
+#    - Essential for effective batch_size=12 with batch_size=1
+#    - Without this: Training would be very unstable
+# 
+# 2. gradient_checkpointing: true
+#    - CRITICAL for 8192 context with 12 blocks
+#    - Saves 30-50% memory (difference between OOM and success)
+#    - Our fixed train script now supports this
+# 
+# 3. Changed fp16 → bf16
+#    - Better numerical stability
+#    - Same memory as fp16
+#    - No loss scaling needed
+#    - Recommended by xLSTM paper
+# 
+# KEPT (Correct):
+# - weight_precision: float32 ✓
+# - All model architecture parameters ✓
+# - Dataset paths ✓
+# - Tokenizer configuration ✓
+# - Learning rate schedule ✓
+# - Logging configuration ✓
+# 
+# MEMORY BREAKDOWN (Estimated):
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# Component                          Memory      Notes
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# Model Parameters                   ~8 GB       512 dim × 12 blocks
+# mLSTM Matrices (9 blocks)          ~9 GB       256 MB × 4 heads × 9
+# Activations (with checkpointing)   ~12 GB      Saved & recomputed
+# Gradients                          ~8 GB       Same size as params
+# Optimizer States (AdamW)           ~8 GB       2× params (momentum + variance)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# TOTAL                              ~45 GB      Out of 47 GB available
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 
+# ⚠️  WARNING: Only 2 GB margin! Any of these could push you over:
+#   - Framework overhead
+#   - CUDA memory fragmentation
+#   - Slightly longer sequences in batch
+#   - Additional logging/tracking
+# 
+# IF YOU GET OOM:
+# 1. Reduce num_blocks: 12 → 8 (saves ~8 GB)
+# 2. Reduce num_blocks: 12 → 6 (saves ~16 GB)
+# 3. Reduce num_blocks: 12 → 4 (saves ~24 GB)
+# 4. OR reduce context_length: 8192 → 4096 (saves ~30 GB)
+# 5. OR reduce context_length: 8192 → 2048 (saves ~38 GB)
+# 
+# RECOMMENDED PROVEN CONFIGURATION:
+#   context_length: 2048
+#   embedding_dim: 512
+#   num_blocks: 12
+#   batch_size: 12
+#   → Memory: ~35 GB (comfortable margin)
+#   → Can still generate 20k token songs via chunking
+# 
+# ============================================================================

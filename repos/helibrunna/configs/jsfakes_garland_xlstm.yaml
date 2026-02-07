@@ -1,0 +1,52 @@
+training:
+  model_name: "jsfakes_garland_xlstm" # Creates folder output/jsfakes_garland_xlstm/run_20251224-0354
+  batch_size: 16 # Number of songs processed simultaneously (Larger batch = more stable training, but needs more GPU memory)
+
+  lr: 0.001 # how much the model changes per update
+  lr_warmup_steps: "10%" # Gradually increase learning rate at the start (First 10% of training steps: learning rate goes from 0 → 0.001)
+  lr_decay_until_steps: "auto"  # Helibrunna calculates when to start decay
+  lr_decay_factor: 0.001 # Gradually decrease learning rate toward the end
+
+  weight_decay: 0.1 # Regularization - prevents overfitting (Adds a penalty for large weights)
+
+  # Memory optimization for speed
+  amp_precision: bfloat16 # During forward/backward passes, use 16-bit (half size, slightly less accurate)
+  weight_precision: float32 # Store model weights in 32-bit
+  enable_mixed_precision: true
+
+  num_epochs: 1 #  How many times to go through entire dataset (100K songs in the dataset, With batch_size: 16, that's 100,000 / 16 = 6,250 batches)
+
+  output_dir: "output/jsfakes_garland_xlstm"
+  save_every_step: 500
+  log_every_step: 10
+  wandb_project: "jsfakes_garland"
+  torch_compile: false
+
+model:
+  num_blocks: 4
+  embedding_dim: 64
+  mlstm_block:
+    mlstm:
+      num_heads: 4
+  slstm_block:
+    slstm:
+      num_heads: 4
+  slstm_at: [2]
+  context_length: 2048 # Maximum sequence length the model can process at once
+
+# modelGPT:
+#   type: "gpt2"
+#   num_blocks: 4
+#   embedding_dim: 64
+#   decoder:
+#     num_heads: 4
+#   context_length: 2048
+
+
+dataset:
+  hugging_face_ids: ["TristanBehrens/jsfakes_garland_2024-100K"]
+  
+tokenizer:
+  type: "whitespace"
+  fill_token: "[EOS]"
+

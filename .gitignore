@@ -24,7 +24,7 @@ __pycache__/
 .ipynb_checkpoints/
 
 # External repos
-repos/
+# repos/
 
 # IDE
 .vscode/
@@ -46,3 +46,4 @@ musescore/
 assets/
 temp/
 
+repos/midi-miner/*_model

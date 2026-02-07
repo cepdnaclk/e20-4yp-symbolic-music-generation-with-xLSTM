@@ -1,0 +1,11 @@
+miditoolkit==0.1.14      # core MIDI parsing (used by MusicBERT)
+pretty_midi              # MIDI I/O + timing
+pypianoroll              # piano-roll representations
+fastBPE                  # required by MusicBERT binarization
+PyYAML                   # config handling
+tqdm                     # progress bars
+pypinyin==0.39.1         # text utils used by MuZic
+jieba==0.42.1            # text utils used by MuZic
+pkuseg==0.0.25           # text segmentation (MuZic shared infra)
+icecream==2.1.3          # debug prints (safe)
+textrank4zh==0.3         # text utils (safe)
