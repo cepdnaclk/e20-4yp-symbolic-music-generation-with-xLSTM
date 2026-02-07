@@ -5,7 +5,13 @@ This script implements the filtering rules from Table 4 of the MuseFormer paper
 with improvements for robustness and configurability.
 
 Usage:
-    python filter_and_normalize.py
+    python filter_and_normalize.py [OPTIONS]
+    
+Options:
+    --preset strict        Use strict MuseFormer configuration
+    --preset permissive    Use permissive configuration
+    --config FILE          Use custom configuration file
+    --help                 Show this help message
 
 Configuration:
     Edit filter_config.py to customize filtering parameters
@@ -18,6 +24,8 @@ import math
 import shutil
 from datetime import datetime
 from typing import Optional, Tuple, List
+import argparse
+import sys
 
 import pandas as pd
 import miditoolkit
@@ -613,15 +621,103 @@ def update_manifest(df: pd.DataFrame, updates: dict):
             df.loc[mask, k] = v
 
 
+def parse_arguments():
+    """Parse command line arguments"""
+    parser = argparse.ArgumentParser(
+        description='MuseFormer MIDI Filtering and Pitch Normalization Pipeline',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  # Use default configuration (as defined in filter_config.py)
+  python filter_and_normalize.py
+  
+  # Use strict MuseFormer preset
+  python filter_and_normalize.py --preset strict
+  
+  # Use permissive preset
+  python filter_and_normalize.py --preset permissive
+  
+  # Use custom config file
+  python filter_and_normalize.py --config my_config.py
+  
+Configuration Methods:
+  The preset configurations can be used to quickly switch between different
+  filtering strategies. See filter_config.py for details on each preset.
+        """
+    )
+    
+    parser.add_argument(
+        '--preset',
+        choices=['strict', 'permissive'],
+        help='Load a preset configuration (overrides config file settings)'
+    )
+    
+    parser.add_argument(
+        '--config',
+        type=str,
+        help='Path to custom configuration file (alternative to filter_config.py)'
+    )
+    
+    parser.add_argument(
+        '--dry-run',
+        action='store_true',
+        help='Show what would be done without actually processing files'
+    )
+    
+    return parser.parse_args()
+
+
 # =============================================================================
 # MAIN PIPELINE
 # =============================================================================
 
 def main():
+    # Parse command line arguments
+    args = parse_arguments()
+    
+    # Load custom config if specified
+    if args.config:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("custom_config", args.config)
+        if spec is None or spec.loader is None:
+            print(f"ERROR: Could not load config file: {args.config}")
+            sys.exit(1)
+        global config
+        config = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(config)
+        print(f"Loaded custom configuration from: {args.config}")
+        print()
+    
+    # Load preset if specified
+    if args.preset:
+        if args.preset == 'strict':
+            config.load_museformer_strict()
+        elif args.preset == 'permissive':
+            config.load_permissive()
+        print()
+    
     print("=" * 80)
     print("MuseFormer MIDI Filtering and Pitch Normalization Pipeline")
     print("=" * 80)
     print()
+    
+    # Display active configuration
+    print("Active Configuration:")
+    print(f"  Preset: {args.preset if args.preset else 'default'}")
+    print(f"  Track detection: {config.TRACK_DETECTION_METHOD}")
+    print(f"  Required program: {config.REQUIRED_PROGRAM_NUMBER}")
+    print(f"  Tempo range: {config.TEMPO_MIN}-{config.TEMPO_MAX} BPM")
+    print(f"  Pitch range: {config.PITCH_MIN}-{config.PITCH_MAX}")
+    print(f"  Max note duration: {config.MAX_NOTE_DURATION_BEATS} beats")
+    print(f"  Max empty bars: {config.MAX_EMPTY_BARS_ALLOWED}")
+    print(f"  Empty bar method: {config.EMPTY_BAR_METHOD}")
+    print(f"  Min tracks: {config.MIN_NONEMPTY_TRACKS}")
+    print()
+    
+    if args.dry_run:
+        print("DRY RUN MODE: No files will be processed")
+        print()
+        return
     
     # Create output directories
     config.OUTPUT_FILTERED_DIR.mkdir(parents=True, exist_ok=True)

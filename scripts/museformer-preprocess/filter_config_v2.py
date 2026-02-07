@@ -24,8 +24,8 @@ OUTPUT_PITCH_NORM_DIR = Path("/scratch1/e20-fyp-xlstm-music-generation/e20fyptem
 MANIFEST_PATH = Path("/scratch1/e20-fyp-xlstm-music-generation/e20fyptemp1/fyp-musicgen/data/museformer_baseline/sample/logs/sample_manifest.csv")
 
 # Stage names for manifest tracking
-STAGE_FILTER = "filter"
-STAGE_PITCH_NORM = "pitch_norm"
+STAGE_FILTER = "05_filtered"
+STAGE_PITCH_NORM = "06_pitch_normalize"
 
 
 # =============================================================================

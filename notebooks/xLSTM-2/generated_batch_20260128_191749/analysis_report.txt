@@ -12,3 +12,4042 @@ SUMMARY TABLE:
 --------------------------------------------------------------------------------------------------------------------------------------------
 1    | temp_0.6_bars_32_001.mid       | 0.6   | 32     | 24     | 4068   | 14    | 49     | Yes   | 224.5   | ✓     
 2    | temp_0.6_bars_32_002.mid       | 0.6   | 32     | 32     | 5226   | 18    | 101    | Yes   | 256.9   | ✓     
+3    | temp_0.6_bars_32_003.mid       | 0.6   | 32     | 32     | 6093   | 32    | 178    | Yes   | 335.2   | ✓     
+4    | temp_0.6_bars_32_004.mid       | 0.6   | 32     | 19     | 3718   | 7     | 55     | Yes   | 192.7   | ✓     
+5    | temp_0.6_bars_32_005.mid       | 0.6   | 32     | 33     | 3749   | 20    | 51     | Yes   | 163.4   | ✓     
+6    | temp_0.6_bars_48_001.mid       | 0.6   | 48     | 49     | 5348   | 10    | 97     | Yes   | 227.0   | ✓     
+7    | temp_0.6_bars_48_002.mid       | 0.6   | 48     | 49     | 9050   | 23    | 149    | Yes   | 485.9   | ✓     
+8    | temp_0.6_bars_48_003.mid       | 0.6   | 48     | 11     | 2211   | 10    | 37     | Yes   | 103.9   | ✓     
+9    | temp_0.6_bars_48_004.mid       | 0.6   | 48     | 48     | 5156   | 10    | 72     | Yes   | 229.2   | ✓     
+10   | temp_0.6_bars_48_005.mid       | 0.6   | 48     | 48     | 3049   | 4     | 17     | Yes   | 114.7   | ✓     
+11   | temp_0.6_bars_64_001.mid       | 0.6   | 64     | 64     | 8494   | 18    | 181    | Yes   | 420.2   | ✓     
+12   | temp_0.6_bars_64_002.mid       | 0.6   | 64     | 65     | 7096   | 26    | 121    | Yes   | 335.4   | ✓     
+13   | temp_0.6_bars_64_003.mid       | 0.6   | 64     | 32     | 4519   | 12    | 59     | Yes   | 222.3   | ✓     
+14   | temp_0.6_bars_64_004.mid       | 0.6   | 64     | 56     | 7982   | 22    | 194    | Yes   | 391.4   | ✓     
+15   | temp_0.6_bars_64_005.mid       | 0.6   | 64     | 48     | 8803   | 28    | 219    | Yes   | 501.9   | ✓     
+16   | temp_0.7_bars_32_001.mid       | 0.7   | 32     | 20     | 2695   | 4     | 6      | Yes   | 126.1   | ✓     
+17   | temp_0.7_bars_32_002.mid       | 0.7   | 32     | 32     | 2794   | 4     | 27     | Yes   | 96.2    | ✓     
+18   | temp_0.7_bars_32_003.mid       | 0.7   | 32     | 33     | 5377   | 18    | 135    | Yes   | 239.7   | ✓     
+19   | temp_0.7_bars_32_004.mid       | 0.7   | 32     | 32     | 4748   | 18    | 143    | Yes   | 245.4   | ✓     
+20   | temp_0.7_bars_32_005.mid       | 0.7   | 32     | 26     | 4592   | 25    | 100    | Yes   | 213.4   | ✓     
+21   | temp_0.7_bars_48_001.mid       | 0.7   | 48     | 50     | 2645   | 3     | 8      | Yes   | 82.7    | ✓     
+22   | temp_0.7_bars_48_002.mid       | 0.7   | 48     | 44     | 4741   | 22    | 79     | Yes   | 218.1   | ✓     
+23   | temp_0.7_bars_48_003.mid       | 0.7   | 48     | 49     | 4502   | 19    | 52     | Yes   | 221.0   | ✓     
+24   | temp_0.7_bars_48_004.mid       | 0.7   | 48     | 48     | 7753   | 33    | 249    | Yes   | 405.3   | ✓     
+25   | temp_0.7_bars_48_005.mid       | 0.7   | 48     | 51     | 4637   | 15    | 87     | Yes   | 197.7   | ✓     
+26   | temp_0.7_bars_64_001.mid       | 0.7   | 64     | 65     | 5758   | 10    | 55     | Yes   | 262.5   | ✓     
+27   | temp_0.7_bars_64_002.mid       | 0.7   | 64     | 19     | 3932   | 12    | 43     | Yes   | 207.6   | ✓     
+28   | temp_0.7_bars_64_003.mid       | 0.7   | 64     | 59     | 8536   | 29    | 215    | Yes   | 468.4   | ✓     
+29   | temp_0.7_bars_64_004.mid       | 0.7   | 64     | 7      | 1582   | 6     | 0      | No    | 62.0    | ✓     
+30   | temp_0.7_bars_64_005.mid       | 0.7   | 64     | 64     | 7595   | 29    | 203    | Yes   | 410.2   | ✓     
+31   | temp_0.8_bars_32_001.mid       | 0.8   | 32     | 24     | 3918   | 22    | 61     | Yes   | 195.2   | ✓     
+32   | temp_0.8_bars_32_002.mid       | 0.8   | 32     | 11     | 2503   | 13    | 36     | Yes   | 146.2   | ✓     
+33   | temp_0.8_bars_32_003.mid       | 0.8   | 32     | 19     | 2164   | 5     | 8      | Yes   | 82.7    | ✓     
+34   | temp_0.8_bars_32_004.mid       | 0.8   | 32     | 39     | 1842   | 1     | 1      | No    | 49.3    | ✓     
+35   | temp_0.8_bars_32_005.mid       | 0.8   | 32     | 32     | 3943   | 4     | 66     | Yes   | 197.7   | ✓     
+36   | temp_0.8_bars_48_001.mid       | 0.8   | 48     | 48     | 9007   | 32    | 196    | Yes   | 479.1   | ✓     
+37   | temp_0.8_bars_48_002.mid       | 0.8   | 48     | 31     | 5067   | 29    | 90     | Yes   | 307.3   | ✓     
+38   | temp_0.8_bars_48_003.mid       | 0.8   | 48     | 24     | 4285   | 24    | 54     | Yes   | 246.0   | ✓     
+39   | temp_0.8_bars_48_004.mid       | 0.8   | 48     | 48     | 7455   | 21    | 111    | Yes   | 393.0   | ✓     
+40   | temp_0.8_bars_48_005.mid       | 0.8   | 48     | 48     | 6601   | 14    | 83     | Yes   | 326.6   | ✓     
+41   | temp_0.8_bars_64_001.mid       | 0.8   | 64     | 65     | 6396   | 17    | 175    | Yes   | 310.9   | ✓     
+42   | temp_0.8_bars_64_002.mid       | 0.8   | 64     | 8      | 2006   | 5     | 6      | Yes   | 99.2    | ✓     
+43   | temp_0.8_bars_64_003.mid       | 0.8   | 64     | 9      | 2001   | 8     | 22     | Yes   | 110.1   | ✓     
+44   | temp_0.8_bars_64_004.mid       | 0.8   | 64     | 44     | 6780   | 28    | 160    | Yes   | 355.8   | ✓     
+45   | temp_0.8_bars_64_005.mid       | 0.8   | 64     | 64     | 12738  | 24    | 250    | Yes   | 726.4   | ✓     
+46   | temp_0.9_bars_32_001.mid       | 0.9   | 32     | 26     | 4129   | 16    | 47     | Yes   | 221.3   | ✓     
+47   | temp_0.9_bars_32_002.mid       | 0.9   | 32     | 32     | 4728   | 19    | 82     | Yes   | 211.3   | ✓     
+48   | temp_0.9_bars_32_003.mid       | 0.9   | 32     | 24     | 4869   | 49    | 94     | Yes   | 290.1   | ✓     
+49   | temp_0.9_bars_32_004.mid       | 0.9   | 32     | 32     | 5087   | 20    | 92     | Yes   | 222.1   | ✓     
+50   | temp_0.9_bars_32_005.mid       | 0.9   | 32     | 8      | 1755   | 13    | 4      | Yes   | 70.8    | ✓     
+51   | temp_0.9_bars_48_001.mid       | 0.9   | 48     | 41     | 4020   | 21    | 70     | Yes   | 179.8   | ✓     
+52   | temp_0.9_bars_48_002.mid       | 0.9   | 48     | 51     | 2071   | 2     | 2      | Yes   | 63.2    | ✓     
+53   | temp_0.9_bars_48_003.mid       | 0.9   | 48     | 42     | 4634   | 27    | 61     | Yes   | 213.5   | ✓     
+54   | temp_0.9_bars_48_004.mid       | 0.9   | 48     | 50     | 8105   | 30    | 223    | Yes   | 421.6   | ✓     
+55   | temp_0.9_bars_48_005.mid       | 0.9   | 48     | 49     | 8810   | 49    | 164    | Yes   | 467.8   | ✓     
+56   | temp_0.9_bars_64_001.mid       | 0.9   | 64     | 54     | 9960   | 60    | 296    | Yes   | 552.0   | ✓     
+57   | temp_0.9_bars_64_002.mid       | 0.9   | 64     | 65     | 4259   | 7     | 44     | Yes   | 164.9   | ✓     
+58   | temp_0.9_bars_64_003.mid       | 0.9   | 64     | 57     | 5220   | 7     | 77     | Yes   | 262.9   | ✓     
+59   | temp_0.9_bars_64_004.mid       | 0.9   | 64     | 64     | 10226  | 37    | 297    | Yes   | 608.9   | ✓     
+60   | temp_0.9_bars_64_005.mid       | 0.9   | 64     | 16     | 1839   | 3     | 0      | No    | 73.1    | ✓     
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+======================================================================
+DETAILED ANALYSIS
+======================================================================
+
+[1/60] temp_0.6_bars_32_001.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.6
+Target bars: 32, Actual bars: 24
+Generation time: 224.5s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 4068
+   Total bars: 24
+   Total notes: 936
+   Unique instruments: 14
+
+🎵 BAR STATISTICS:
+   Average bar length: 168.5 tokens
+   Min bar length: 25 tokens
+   Max bar length: 228 tokens
+
+🔤 TOKEN TYPES:
+   b-: 24
+   d-: 942
+   i-: 555
+   o-: 324
+   p-: 936
+   s-: 24
+   t-: 325
+   v-: 938
+
+🎹 INSTRUMENTS:
+   i-100
+   i-128
+   i-2
+   i-33
+   i-48
+   i-50
+   i-52
+   i-54
+   i-62
+   i-64
+   i-81
+   i-82
+   i-88
+   i-96
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 49
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 1164: p-64 (missing duration)
+   - Incomplete triplet at token 1298: p-55 (missing duration)
+   - Incomplete triplet at token 1719: p-170 d-0 (missing velocity)
+   - Orphan token at 1783: d-0
+   - Incomplete triplet at token 1949: p-60 (missing duration)
+   ... and 44 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-170 d-0 v-31 o-12 t-35 i-128
+   Last 10: p-55 d-6 v-31 i-128 d-1 v-31 p-170 d-0 v-31 b-1
+
+----------------------------------------------------------------------
+
+[2/60] temp_0.6_bars_32_002.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.6
+Target bars: 32, Actual bars: 32
+Generation time: 256.9s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 5226
+   Total bars: 32
+   Total notes: 1240
+   Unique instruments: 18
+
+🎵 BAR STATISTICS:
+   Average bar length: 162.3 tokens
+   Min bar length: 22 tokens
+   Max bar length: 285 tokens
+
+🔤 TOKEN TYPES:
+   b-: 32
+   d-: 1276
+   i-: 815
+   o-: 285
+   p-: 1240
+   s-: 32
+   t-: 283
+   v-: 1263
+
+🎹 INSTRUMENTS:
+   i-116
+   i-118
+   i-12
+   i-128
+   i-14
+   i-27
+   i-28
+   i-3
+   i-30
+   i-32
+   i-34
+   i-35
+   i-51
+   i-62
+   i-65
+   i-68
+   i-70
+   i-71
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 101
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 1744: p-55 (missing duration)
+   - Incomplete triplet at token 1840: p-55 (missing duration)
+   - Incomplete triplet at token 1845: p-55 (missing duration)
+   - Incomplete triplet at token 1846: p-178 (missing duration)
+   - Incomplete triplet at token 1851: p-73 (missing duration)
+   ... and 96 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-170 d-0 v-25 o-12 t-35 i-128
+   Last 10: t-35 i-28 p-57 d-7 v-29 i-34 p-36 d-9 v-27 b-1
+
+----------------------------------------------------------------------
+
+[3/60] temp_0.6_bars_32_003.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.6
+Target bars: 32, Actual bars: 32
+Generation time: 335.2s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 6093
+   Total bars: 32
+   Total notes: 1503
+   Unique instruments: 32
+
+🎵 BAR STATISTICS:
+   Average bar length: 189.4 tokens
+   Min bar length: 13 tokens
+   Max bar length: 280 tokens
+
+🔤 TOKEN TYPES:
+   b-: 32
+   d-: 1566
+   i-: 825
+   o-: 299
+   p-: 1503
+   s-: 32
+   t-: 297
+   v-: 1539
+
+🎹 INSTRUMENTS:
+   i-0
+   i-1
+   i-119
+   i-128
+   i-16
+   i-17
+   i-18
+   i-26
+   i-27
+   i-28
+   i-29
+   i-30
+   i-32
+   i-33
+   i-35
+   i-4
+   i-45
+   i-48
+   i-49
+   i-5
+   i-50
+   i-52
+   i-55
+   i-56
+   i-57
+   i-60
+   i-61
+   i-62
+   i-65
+   i-67
+   i-73
+   i-9
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 178
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 1658: p-67 d-5 (missing velocity)
+   - Incomplete triplet at token 1677: p-73 d-5 (missing velocity)
+   - Incomplete triplet at token 1689: p-166 (missing duration)
+   - Incomplete triplet at token 1828: p-197 d-2 (missing velocity)
+   - Orphan token at 2025: d-11
+   ... and 173 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-165 d-12 v-21 o-24 t-35 i-128
+   Last 10: p-85 d-23 v-13 o-46 t-35 i-57 p-71 d-24 v-23 b-1
+
+----------------------------------------------------------------------
+
+[4/60] temp_0.6_bars_32_004.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.6
+Target bars: 32, Actual bars: 19
+Generation time: 192.7s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 3718
+   Total bars: 19
+   Total notes: 899
+   Unique instruments: 7
+
+🎵 BAR STATISTICS:
+   Average bar length: 194.7 tokens
+   Min bar length: 99 tokens
+   Max bar length: 346 tokens
+
+🔤 TOKEN TYPES:
+   b-: 19
+   d-: 912
+   i-: 352
+   o-: 304
+   p-: 899
+   s-: 19
+   t-: 303
+   v-: 910
+
+🎹 INSTRUMENTS:
+   i-0
+   i-120
+   i-122
+   i-128
+   i-30
+   i-52
+   i-84
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 55
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 1662: p-69 (missing duration)
+   - Orphan token at 1673: d-3
+   - Orphan token at 1714: d-3
+   - Orphan token at 1716: d-12
+   - Incomplete triplet at token 1724: p-69 d-6 (missing velocity)
+   ... and 50 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-0 p-74 d-6 v-25 p-69 d-6 v-25
+   Last 10: p-163 d-3 v-22 o-46 t-22 i-30 p-62 d-5 v-2 b-1
+
+----------------------------------------------------------------------
+
+[5/60] temp_0.6_bars_32_005.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.6
+Target bars: 32, Actual bars: 33
+Generation time: 163.4s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 3749
+   Total bars: 33
+   Total notes: 850
+   Unique instruments: 20
+
+🎵 BAR STATISTICS:
+   Average bar length: 112.6 tokens
+   Min bar length: 25 tokens
+   Max bar length: 189 tokens
+
+🔤 TOKEN TYPES:
+   b-: 33
+   d-: 852
+   i-: 570
+   o-: 284
+   p-: 850
+   s-: 33
+   t-: 283
+   v-: 844
+
+🎹 INSTRUMENTS:
+   i-0
+   i-1
+   i-100
+   i-101
+   i-128
+   i-33
+   i-40
+   i-44
+   i-46
+   i-48
+   i-49
+   i-5
+   i-50
+   i-51
+   i-54
+   i-64
+   i-78
+   i-82
+   i-83
+   i-88
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 51
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 612: p-48 d-26 (missing velocity)
+   - Incomplete triplet at token 614: p-45 (missing duration)
+   - Incomplete triplet at token 1924: p-48 d-15 (missing velocity)
+   - Incomplete triplet at token 1945: p-36 (missing duration)
+   - Incomplete triplet at token 1946: p-36 d-15 (missing velocity)
+   ... and 46 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-170 d-0 v-25 o-12 t-35 i-128
+   Last 10: d-13 v-31 i-64 d-15 v-31 i-128 p-172 d-1 v-31 b-1
+
+----------------------------------------------------------------------
+
+[6/60] temp_0.6_bars_48_001.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.6
+Target bars: 48, Actual bars: 49
+Generation time: 227.0s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 5348
+   Total bars: 49
+   Total notes: 1214
+   Unique instruments: 10
+
+🎵 BAR STATISTICS:
+   Average bar length: 108.1 tokens
+   Min bar length: 29 tokens
+   Max bar length: 202 tokens
+
+🔤 TOKEN TYPES:
+   b-: 49
+   d-: 1265
+   i-: 775
+   o-: 385
+   p-: 1214
+   s-: 48
+   t-: 379
+   v-: 1233
+
+🎹 INSTRUMENTS:
+   i-0
+   i-128
+   i-24
+   i-29
+   i-33
+   i-42
+   i-43
+   i-63
+   i-66
+   i-67
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 97
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Orphan token at 1729: d-3
+   - Incomplete triplet at token 1768: p-163 d-12 (missing velocity)
+   - Orphan token at 1803: d-6
+   - Orphan token at 1805: d-6
+   - Orphan token at 1807: d-6
+   ... and 92 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-0 p-64 d-6 v-31 p-60 d-6 v-31
+   Last 10: p-69 d-6 v-31 p-65 d-6 v-31 i-128 p-182 d-6 b-1
+
+----------------------------------------------------------------------
+
+[7/60] temp_0.6_bars_48_002.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.6
+Target bars: 48, Actual bars: 49
+Generation time: 485.9s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 9050
+   Total bars: 49
+   Total notes: 2165
+   Unique instruments: 23
+
+🎵 BAR STATISTICS:
+   Average bar length: 183.7 tokens
+   Min bar length: 25 tokens
+   Max bar length: 331 tokens
+
+🔤 TOKEN TYPES:
+   b-: 49
+   d-: 2204
+   i-: 1275
+   o-: 556
+   p-: 2165
+   s-: 47
+   t-: 549
+   v-: 2205
+
+🎹 INSTRUMENTS:
+   i-0
+   i-117
+   i-125
+   i-128
+   i-16
+   i-18
+   i-21
+   i-24
+   i-25
+   i-26
+   i-27
+   i-28
+   i-32
+   i-4
+   i-49
+   i-50
+   i-51
+   i-53
+   i-61
+   i-66
+   i-71
+   i-73
+   i-8
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 149
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 1884: p-170 (missing duration)
+   - Orphan token at 1922: d-0
+   - Orphan token at 1929: d-3
+   - Orphan token at 2022: d-4
+   - Orphan token at 2024: d-2
+   ... and 144 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-170 d-0 v-18 o-12 t-35 i-128
+   Last 10: v-16 i-28 p-59 d-2 v-16 i-32 p-33 d-6 v-16 b-1
+
+----------------------------------------------------------------------
+
+[8/60] temp_0.6_bars_48_003.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.6
+Target bars: 48, Actual bars: 11
+Generation time: 103.9s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 2211
+   Total bars: 11
+   Total notes: 503
+   Unique instruments: 10
+
+🎵 BAR STATISTICS:
+   Average bar length: 200.0 tokens
+   Min bar length: 13 tokens
+   Max bar length: 289 tokens
+
+🔤 TOKEN TYPES:
+   b-: 11
+   d-: 525
+   i-: 378
+   o-: 139
+   p-: 503
+   s-: 11
+   t-: 139
+   v-: 505
+
+🎹 INSTRUMENTS:
+   i-0
+   i-11
+   i-128
+   i-25
+   i-33
+   i-35
+   i-48
+   i-49
+   i-57
+   i-84
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 37
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 256: p-72 d-3 (missing velocity)
+   - Incomplete triplet at token 1738: p-55 d-3 (missing velocity)
+   - Incomplete triplet at token 1839: p-59 d-4 (missing velocity)
+   - Orphan token at 1862: d-22
+   - Orphan token at 1864: v-17
+   ... and 32 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-165 d-12 v-21 o-24 t-35 i-128
+   Last 10: o-47 t-35 i-49 p-77 d-21 v-20 p-65 d-21 v-20 b-1
+
+----------------------------------------------------------------------
+
+[9/60] temp_0.6_bars_48_004.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.6
+Target bars: 48, Actual bars: 48
+Generation time: 229.2s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 5156
+   Total bars: 48
+   Total notes: 1111
+   Unique instruments: 10
+
+🎵 BAR STATISTICS:
+   Average bar length: 106.4 tokens
+   Min bar length: 61 tokens
+   Max bar length: 332 tokens
+
+🔤 TOKEN TYPES:
+   b-: 48
+   d-: 1131
+   i-: 792
+   o-: 445
+   p-: 1111
+   s-: 48
+   t-: 443
+   v-: 1138
+
+🎹 INSTRUMENTS:
+   i-0
+   i-1
+   i-128
+   i-17
+   i-18
+   i-21
+   i-25
+   i-35
+   i-49
+   i-89
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 72
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 1758: p-72 (missing duration)
+   - Incomplete triplet at token 1857: p-71 d-12 (missing velocity)
+   - Incomplete triplet at token 1871: p-47 (missing duration)
+   - Incomplete triplet at token 1918: p-64 (missing duration)
+   - Incomplete triplet at token 1921: p-69 (missing duration)
+   ... and 67 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-0 p-45 d-6 v-24 o-6 t-35 i-0
+   Last 10: d-18 v-16 p-64 d-18 v-16 i-128 p-164 d-3 v-24 b-1
+
+----------------------------------------------------------------------
+
+[10/60] temp_0.6_bars_48_005.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.6
+Target bars: 48, Actual bars: 48
+Generation time: 114.7s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 3049
+   Total bars: 48
+   Total notes: 581
+   Unique instruments: 4
+
+🎵 BAR STATISTICS:
+   Average bar length: 62.5 tokens
+   Min bar length: 14 tokens
+   Max bar length: 226 tokens
+
+🔤 TOKEN TYPES:
+   b-: 48
+   d-: 591
+   i-: 458
+   o-: 368
+   p-: 581
+   s-: 47
+   t-: 365
+   v-: 591
+
+🎹 INSTRUMENTS:
+   i-128
+   i-29
+   i-80
+   i-82
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 17
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Orphan token at 160: d-24
+   - Orphan token at 163: v-8
+   - Incomplete triplet at token 1867: p-72 (missing duration)
+   - Orphan token at 1876: v-25
+   - Orphan token at 1877: d-5
+   ... and 12 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-80 p-72 d-6 v-25 o-6 t-35 i-80
+   Last 10: v-25 i-82 p-69 d-2 v-25 i-128 p-170 d-1 v-20 b-1
+
+----------------------------------------------------------------------
+
+[11/60] temp_0.6_bars_64_001.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.6
+Target bars: 64, Actual bars: 64
+Generation time: 420.2s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 8494
+   Total bars: 64
+   Total notes: 1973
+   Unique instruments: 18
+
+🎵 BAR STATISTICS:
+   Average bar length: 131.7 tokens
+   Min bar length: 42 tokens
+   Max bar length: 252 tokens
+
+🔤 TOKEN TYPES:
+   b-: 64
+   d-: 2019
+   i-: 1257
+   o-: 581
+   p-: 1973
+   s-: 63
+   t-: 575
+   v-: 1962
+
+🎹 INSTRUMENTS:
+   i-109
+   i-128
+   i-17
+   i-25
+   i-26
+   i-27
+   i-29
+   i-35
+   i-48
+   i-5
+   i-50
+   i-52
+   i-53
+   i-59
+   i-65
+   i-68
+   i-73
+   i-95
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 181
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 1147: p-62 (missing duration)
+   - Incomplete triplet at token 2000: p-170 d-0 (missing velocity)
+   - Incomplete triplet at token 2014: p-48 (missing duration)
+   - Incomplete triplet at token 2032: p-55 (missing duration)
+   - Orphan token at 2077: d-27
+   ... and 176 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-25 p-64 d-1 v-31 p-55 d-1 v-31
+   Last 10: d-15 v-26 i-128 p-174 d-0 v-13 p-163 d-0 v-28 b-1
+
+----------------------------------------------------------------------
+
+[12/60] temp_0.6_bars_64_002.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.6
+Target bars: 64, Actual bars: 65
+Generation time: 335.4s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 7096
+   Total bars: 65
+   Total notes: 1572
+   Unique instruments: 26
+
+🎵 BAR STATISTICS:
+   Average bar length: 108.2 tokens
+   Min bar length: 25 tokens
+   Max bar length: 215 tokens
+
+🔤 TOKEN TYPES:
+   b-: 65
+   d-: 1615
+   i-: 1225
+   o-: 474
+   p-: 1572
+   s-: 63
+   t-: 473
+   v-: 1609
+
+🎹 INSTRUMENTS:
+   i-108
+   i-12
+   i-128
+   i-17
+   i-19
+   i-24
+   i-25
+   i-26
+   i-28
+   i-3
+   i-32
+   i-4
+   i-41
+   i-48
+   i-49
+   i-56
+   i-57
+   i-58
+   i-60
+   i-61
+   i-64
+   i-65
+   i-71
+   i-72
+   i-73
+   i-9
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 121
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 1859: p-60 (missing duration)
+   - Orphan token at 1885: d-6
+   - Orphan token at 1904: d-5
+   - Incomplete triplet at token 1912: p-176 (missing duration)
+   - Orphan token at 1914: v-10
+   ... and 116 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-165 d-4 v-21 o-12 t-35 i-128
+   Last 10: t-36 i-48 p-83 d-12 v-7 i-128 p-190 d-3 v-19 b-1
+
+----------------------------------------------------------------------
+
+[13/60] temp_0.6_bars_64_003.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.6
+Target bars: 64, Actual bars: 32
+Generation time: 222.3s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 4519
+   Total bars: 32
+   Total notes: 1031
+   Unique instruments: 12
+
+🎵 BAR STATISTICS:
+   Average bar length: 140.2 tokens
+   Min bar length: 28 tokens
+   Max bar length: 350 tokens
+
+🔤 TOKEN TYPES:
+   b-: 32
+   d-: 1053
+   i-: 605
+   o-: 370
+   p-: 1031
+   s-: 32
+   t-: 370
+   v-: 1026
+
+🎹 INSTRUMENTS:
+   i-1
+   i-11
+   i-128
+   i-24
+   i-32
+   i-38
+   i-50
+   i-62
+   i-81
+   i-84
+   i-87
+   i-9
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 59
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 1672: p-163 d-0 (missing velocity)
+   - Incomplete triplet at token 1745: p-182 d-0 (missing velocity)
+   - Incomplete triplet at token 1780: p-197 d-0 (missing velocity)
+   - Orphan token at 1794: v-31
+   - Orphan token at 1795: v-21
+   ... and 54 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-163 d-0 v-30 o-9 t-35 i-128
+   Last 10: d-2 v-19 p-37 d-1 v-15 i-128 p-163 d-0 v-31 b-1
+
+----------------------------------------------------------------------
+
+[14/60] temp_0.6_bars_64_004.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.6
+Target bars: 64, Actual bars: 56
+Generation time: 391.4s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 7982
+   Total bars: 56
+   Total notes: 1860
+   Unique instruments: 22
+
+🎵 BAR STATISTICS:
+   Average bar length: 141.5 tokens
+   Min bar length: 25 tokens
+   Max bar length: 374 tokens
+
+🔤 TOKEN TYPES:
+   b-: 56
+   d-: 1957
+   i-: 1033
+   o-: 553
+   p-: 1860
+   s-: 56
+   t-: 552
+   v-: 1915
+
+🎹 INSTRUMENTS:
+   i-0
+   i-100
+   i-115
+   i-118
+   i-119
+   i-120
+   i-128
+   i-24
+   i-25
+   i-26
+   i-27
+   i-28
+   i-33
+   i-4
+   i-46
+   i-64
+   i-65
+   i-72
+   i-84
+   i-87
+   i-88
+   i-91
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 194
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Orphan token at 2217: d-6
+   - Incomplete triplet at token 2264: p-48 d-2 (missing velocity)
+   - Orphan token at 2277: d-5
+   - Orphan token at 2297: d-9
+   - Orphan token at 2317: d-12
+   ... and 189 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-170 d-0 v-25 o-12 t-35 i-128
+   Last 10: i-25 p-68 d-2 v-20 p-64 d-2 v-20 d-3 v-20 b-1
+
+----------------------------------------------------------------------
+
+[15/60] temp_0.6_bars_64_005.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.6
+Target bars: 64, Actual bars: 48
+Generation time: 501.9s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 8803
+   Total bars: 48
+   Total notes: 2076
+   Unique instruments: 28
+
+🎵 BAR STATISTICS:
+   Average bar length: 182.4 tokens
+   Min bar length: 14 tokens
+   Max bar length: 381 tokens
+
+🔤 TOKEN TYPES:
+   b-: 48
+   d-: 2128
+   i-: 1266
+   o-: 567
+   p-: 2076
+   s-: 47
+   t-: 561
+   v-: 2110
+
+🎹 INSTRUMENTS:
+   i-0
+   i-1
+   i-104
+   i-11
+   i-128
+   i-14
+   i-16
+   i-2
+   i-25
+   i-27
+   i-28
+   i-29
+   i-32
+   i-34
+   i-35
+   i-37
+   i-40
+   i-47
+   i-48
+   i-52
+   i-56
+   i-61
+   i-63
+   i-66
+   i-67
+   i-73
+   i-75
+   i-84
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 219
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Orphan token at 1560: v-27
+   - Orphan token at 1561: d-6
+   - Incomplete triplet at token 1567: p-76 (missing duration)
+   - Incomplete triplet at token 1586: p-180 d-6 (missing velocity)
+   - Orphan token at 1599: v-31
+   ... and 214 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-0 p-72 d-6 v-25 p-69 d-6 v-25
+   Last 10: o-43 t-35 i-128 p-182 d-0 v-25 p-174 d-6 v-25 b-1
+
+----------------------------------------------------------------------
+
+[16/60] temp_0.7_bars_32_001.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.7
+Target bars: 32, Actual bars: 20
+Generation time: 126.1s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 2695
+   Total bars: 20
+   Total notes: 597
+   Unique instruments: 4
+
+🎵 BAR STATISTICS:
+   Average bar length: 133.8 tokens
+   Min bar length: 25 tokens
+   Max bar length: 273 tokens
+
+🔤 TOKEN TYPES:
+   b-: 20
+   d-: 598
+   i-: 359
+   o-: 252
+   p-: 597
+   s-: 20
+   t-: 252
+   v-: 597
+
+🎹 INSTRUMENTS:
+   i-128
+   i-27
+   i-29
+   i-33
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 6
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 256: p-59 (missing duration)
+   - Orphan token at 2013: d-2
+   - Incomplete triplet at token 2384: p-33 (missing duration)
+   - Orphan token at 2386: d-8
+   - Orphan token at 2480: d-12
+   ... and 1 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-170 d-0 v-13 o-12 t-35 i-128
+   Last 10: v-23 i-33 p-43 d-6 v-23 i-128 p-169 d-0 v-20 b-1
+
+----------------------------------------------------------------------
+
+[17/60] temp_0.7_bars_32_002.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.7
+Target bars: 32, Actual bars: 32
+Generation time: 96.2s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 2794
+   Total bars: 32
+   Total notes: 682
+   Unique instruments: 4
+
+🎵 BAR STATISTICS:
+   Average bar length: 86.3 tokens
+   Min bar length: 25 tokens
+   Max bar length: 127 tokens
+
+🔤 TOKEN TYPES:
+   b-: 32
+   d-: 693
+   i-: 232
+   o-: 222
+   p-: 682
+   s-: 31
+   t-: 222
+   v-: 680
+
+🎹 INSTRUMENTS:
+   i-0
+   i-128
+   i-46
+   i-7
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 27
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Orphan token at 1806: d-8
+   - Orphan token at 1847: d-2
+   - Orphan token at 1849: d-2
+   - Orphan token at 1857: d-2
+   - Incomplete triplet at token 1886: p-67 (missing duration)
+   ... and 22 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-170 d-1 v-21 o-12 t-35 i-128
+   Last 10: p-48 d-2 v-16 i-128 p-174 d-2 v-20 p-164 d-2 b-1
+
+----------------------------------------------------------------------
+
+[18/60] temp_0.7_bars_32_003.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.7
+Target bars: 32, Actual bars: 33
+Generation time: 239.7s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 5377
+   Total bars: 33
+   Total notes: 1109
+   Unique instruments: 18
+
+🎵 BAR STATISTICS:
+   Average bar length: 161.9 tokens
+   Min bar length: 13 tokens
+   Max bar length: 314 tokens
+
+🔤 TOKEN TYPES:
+   b-: 33
+   d-: 1153
+   i-: 878
+   o-: 511
+   p-: 1109
+   s-: 33
+   t-: 509
+   v-: 1151
+
+🎹 INSTRUMENTS:
+   i-1
+   i-107
+   i-128
+   i-24
+   i-36
+   i-37
+   i-38
+   i-45
+   i-50
+   i-53
+   i-59
+   i-72
+   i-80
+   i-82
+   i-83
+   i-86
+   i-88
+   i-92
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 135
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Orphan token at 1759: d-3
+   - Orphan token at 1762: d-3
+   - Orphan token at 1774: d-3
+   - Orphan token at 1797: d-3
+   - Orphan token at 1862: d-3
+   ... and 130 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-159 d-3 v-20 o-24 t-35 i-128
+   Last 10: p-189 d-2 v-20 o-45 t-35 i-38 p-64 d-2 v-20 b-1
+
+----------------------------------------------------------------------
+
+[19/60] temp_0.7_bars_32_004.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.7
+Target bars: 32, Actual bars: 32
+Generation time: 245.4s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 4748
+   Total bars: 32
+   Total notes: 1090
+   Unique instruments: 18
+
+🎵 BAR STATISTICS:
+   Average bar length: 147.4 tokens
+   Min bar length: 67 tokens
+   Max bar length: 287 tokens
+
+🔤 TOKEN TYPES:
+   b-: 32
+   d-: 1155
+   i-: 779
+   o-: 265
+   p-: 1090
+   s-: 32
+   t-: 259
+   v-: 1136
+
+🎹 INSTRUMENTS:
+   i-0
+   i-118
+   i-128
+   i-26
+   i-35
+   i-41
+   i-46
+   i-52
+   i-53
+   i-54
+   i-60
+   i-61
+   i-64
+   i-68
+   i-70
+   i-73
+   i-75
+   i-88
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 143
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Orphan token at 1867: d-21
+   - Orphan token at 1870: d-6
+   - Orphan token at 1898: d-9
+   - Incomplete triplet at token 1919: p-67 d-6 (missing velocity)
+   - Orphan token at 1925: d-6
+   ... and 138 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-0 p-64 d-18 v-25 p-60 d-15 v-25
+   Last 10: v-25 p-72 d-1 d-1 v-25 i-128 p-170 d-1 v-25 b-1
+
+----------------------------------------------------------------------
+
+[20/60] temp_0.7_bars_32_005.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.7
+Target bars: 32, Actual bars: 26
+Generation time: 213.4s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 4592
+   Total bars: 26
+   Total notes: 1109
+   Unique instruments: 25
+
+🎵 BAR STATISTICS:
+   Average bar length: 175.6 tokens
+   Min bar length: 93 tokens
+   Max bar length: 317 tokens
+
+🔤 TOKEN TYPES:
+   b-: 26
+   d-: 1123
+   i-: 686
+   o-: 249
+   p-: 1109
+   s-: 27
+   t-: 248
+   v-: 1124
+
+🎹 INSTRUMENTS:
+   i-0
+   i-1
+   i-106
+   i-115
+   i-128
+   i-16
+   i-18
+   i-25
+   i-3
+   i-32
+   i-33
+   i-34
+   i-42
+   i-45
+   i-48
+   i-51
+   i-59
+   i-61
+   i-67
+   i-68
+   i-71
+   i-73
+   i-75
+   i-88
+   i-94
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 100
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 1293: p-79 (missing duration)
+   - Incomplete triplet at token 1540: p-60 (missing duration)
+   - Incomplete triplet at token 1553: p-60 (missing duration)
+   - Orphan token at 1561: v-31
+   - Orphan token at 1582: v-29
+   ... and 95 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-0 p-60 d-3 v-31 p-60 d-3 v-31
+   Last 10: p-168 d-3 v-31 p-167 d-2 v-31 p-166 d-3 v-31 b-1
+
+----------------------------------------------------------------------
+
+[21/60] temp_0.7_bars_48_001.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.7
+Target bars: 48, Actual bars: 50
+Generation time: 82.7s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 2645
+   Total bars: 50
+   Total notes: 472
+   Unique instruments: 3
+
+🎵 BAR STATISTICS:
+   Average bar length: 51.9 tokens
+   Min bar length: 25 tokens
+   Max bar length: 90 tokens
+
+🔤 TOKEN TYPES:
+   b-: 50
+   d-: 476
+   i-: 403
+   o-: 360
+   p-: 472
+   s-: 49
+   t-: 359
+   v-: 476
+
+🎹 INSTRUMENTS:
+   i-128
+   i-24
+   i-25
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 8
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 2379: p-67 d-12 (missing velocity)
+   - Orphan token at 2416: v-23
+   - Orphan token at 2470: d-15
+   - Orphan token at 2483: v-19
+   - Incomplete triplet at token 2484: p-50 d-25 (missing velocity)
+   ... and 3 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-170 d-3 v-22 o-12 t-35 i-128
+   Last 10: d-12 v-25 i-128 p-190 d-12 v-25 p-164 d-12 v-25 b-1
+
+----------------------------------------------------------------------
+
+[22/60] temp_0.7_bars_48_002.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.7
+Target bars: 48, Actual bars: 44
+Generation time: 218.1s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 4741
+   Total bars: 44
+   Total notes: 1035
+   Unique instruments: 22
+
+🎵 BAR STATISTICS:
+   Average bar length: 106.8 tokens
+   Min bar length: 13 tokens
+   Max bar length: 267 tokens
+
+🔤 TOKEN TYPES:
+   b-: 44
+   d-: 1040
+   i-: 812
+   o-: 370
+   p-: 1035
+   s-: 45
+   t-: 367
+   v-: 1028
+
+🎹 INSTRUMENTS:
+   i-108
+   i-118
+   i-120
+   i-128
+   i-26
+   i-28
+   i-32
+   i-33
+   i-38
+   i-50
+   i-52
+   i-62
+   i-63
+   i-68
+   i-73
+   i-80
+   i-81
+   i-83
+   i-87
+   i-88
+   i-9
+   i-95
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 79
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 1326: p-55 d-14 (missing velocity)
+   - Incomplete triplet at token 1871: p-170 (missing duration)
+   - Orphan token at 1876: d-7
+   - Incomplete triplet at token 1877: p-68 (missing duration)
+   - Orphan token at 1884: d-12
+   ... and 74 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-170 d-0 v-18 o-12 t-35 i-128
+   Last 10: p-170 d-6 v-24 o-45 t-35 i-128 p-170 d-3 v-24 b-1
+
+----------------------------------------------------------------------
+
+[23/60] temp_0.7_bars_48_003.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.7
+Target bars: 48, Actual bars: 49
+Generation time: 221.0s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 4502
+   Total bars: 49
+   Total notes: 991
+   Unique instruments: 19
+
+🎵 BAR STATISTICS:
+   Average bar length: 90.9 tokens
+   Min bar length: 25 tokens
+   Max bar length: 305 tokens
+
+🔤 TOKEN TYPES:
+   b-: 49
+   d-: 1003
+   i-: 646
+   o-: 381
+   p-: 991
+   s-: 49
+   t-: 382
+   v-: 1001
+
+🎹 INSTRUMENTS:
+   i-1
+   i-128
+   i-13
+   i-19
+   i-21
+   i-23
+   i-26
+   i-29
+   i-30
+   i-33
+   i-40
+   i-49
+   i-5
+   i-50
+   i-53
+   i-57
+   i-66
+   i-71
+   i-80
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 52
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 1828: p-62 d-4 (missing velocity)
+   - Incomplete triplet at token 1830: p-30 (missing duration)
+   - Incomplete triplet at token 1941: p-45 (missing duration)
+   - Incomplete triplet at token 2022: p-57 d-8 (missing velocity)
+   - Orphan token at 2026: v-31
+   ... and 47 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-167 d-0 v-14 o-6 t-35 i-40
+   Last 10: p-179 d-3 v-14 o-47 t-35 i-19 p-71 d-5 v-7 b-1
+
+----------------------------------------------------------------------
+
+[24/60] temp_0.7_bars_48_004.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.7
+Target bars: 48, Actual bars: 48
+Generation time: 405.3s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 7753
+   Total bars: 48
+   Total notes: 1837
+   Unique instruments: 33
+
+🎵 BAR STATISTICS:
+   Average bar length: 160.5 tokens
+   Min bar length: 79 tokens
+   Max bar length: 294 tokens
+
+🔤 TOKEN TYPES:
+   b-: 48
+   d-: 1895
+   i-: 1040
+   o-: 519
+   p-: 1837
+   s-: 48
+   t-: 514
+   v-: 1852
+
+🎹 INSTRUMENTS:
+   i-0
+   i-11
+   i-12
+   i-128
+   i-17
+   i-25
+   i-26
+   i-27
+   i-28
+   i-32
+   i-34
+   i-39
+   i-49
+   i-50
+   i-52
+   i-53
+   i-54
+   i-60
+   i-62
+   i-63
+   i-65
+   i-66
+   i-70
+   i-71
+   i-72
+   i-73
+   i-75
+   i-76
+   i-82
+   i-84
+   i-89
+   i-91
+   i-94
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 249
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Orphan token at 1702: d-6
+   - Incomplete triplet at token 1794: p-163 d-6 (missing velocity)
+   - Incomplete triplet at token 1803: p-170 (missing duration)
+   - Incomplete triplet at token 1805: p-163 (missing duration)
+   - Orphan token at 1807: v-19
+   ... and 244 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-32 p-38 d-6 v-22 i-128 p-170 d-6
+   Last 10: d-27 p-101 d-38 d-38 p-49 d-6 p-36 d-7 v-26 b-1
+
+----------------------------------------------------------------------
+
+[25/60] temp_0.7_bars_48_005.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.7
+Target bars: 48, Actual bars: 51
+Generation time: 197.7s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 4637
+   Total bars: 51
+   Total notes: 959
+   Unique instruments: 15
+
+🎵 BAR STATISTICS:
+   Average bar length: 89.9 tokens
+   Min bar length: 25 tokens
+   Max bar length: 201 tokens
+
+🔤 TOKEN TYPES:
+   b-: 51
+   d-: 1010
+   i-: 743
+   o-: 416
+   p-: 959
+   s-: 51
+   t-: 413
+   v-: 994
+
+🎹 INSTRUMENTS:
+   i-0
+   i-100
+   i-12
+   i-128
+   i-29
+   i-33
+   i-46
+   i-50
+   i-52
+   i-53
+   i-54
+   i-6
+   i-61
+   i-79
+   i-88
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 87
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Orphan token at 1613: d-12
+   - Orphan token at 1626: d-10
+   - Orphan token at 1628: d-2
+   - Orphan token at 1684: d-12
+   - Orphan token at 1687: d-12
+   ... and 82 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-170 d-1 v-21 o-12 t-35 i-128
+   Last 10: t-35 i-29 p-71 d-6 v-31 i-128 p-170 d-1 v-21 b-1
+
+----------------------------------------------------------------------
+
+[26/60] temp_0.7_bars_64_001.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.7
+Target bars: 64, Actual bars: 65
+Generation time: 262.5s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 5758
+   Total bars: 65
+   Total notes: 1214
+   Unique instruments: 10
+
+🎵 BAR STATISTICS:
+   Average bar length: 87.6 tokens
+   Min bar length: 19 tokens
+   Max bar length: 170 tokens
+
+🔤 TOKEN TYPES:
+   b-: 65
+   d-: 1229
+   i-: 863
+   o-: 550
+   p-: 1214
+   s-: 64
+   t-: 548
+   v-: 1225
+
+🎹 INSTRUMENTS:
+   i-107
+   i-128
+   i-24
+   i-25
+   i-32
+   i-42
+   i-71
+   i-72
+   i-77
+   i-88
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 55
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 1526: p-53 d-15 (missing velocity)
+   - Incomplete triplet at token 1595: p-53 d-15 (missing velocity)
+   - Incomplete triplet at token 1607: p-57 d-6 (missing velocity)
+   - Orphan token at 1612: v-31
+   - Orphan token at 1626: d-27
+   ... and 50 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-24 p-48 d-12 v-25 i-25 p-43 d-6
+   Last 10: d-6 v-31 i-128 p-203 d-6 v-27 p-178 d-6 v-25 b-1
+
+----------------------------------------------------------------------
+
+[27/60] temp_0.7_bars_64_002.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.7
+Target bars: 64, Actual bars: 19
+Generation time: 207.6s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 3932
+   Total bars: 19
+   Total notes: 910
+   Unique instruments: 12
+
+🎵 BAR STATISTICS:
+   Average bar length: 205.9 tokens
+   Min bar length: 25 tokens
+   Max bar length: 314 tokens
+
+🔤 TOKEN TYPES:
+   b-: 19
+   d-: 929
+   i-: 562
+   o-: 290
+   p-: 910
+   s-: 19
+   t-: 287
+   v-: 916
+
+🎹 INSTRUMENTS:
+   i-105
+   i-110
+   i-114
+   i-128
+   i-24
+   i-30
+   i-33
+   i-52
+   i-71
+   i-72
+   i-84
+   i-87
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 43
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 1925: p-55 d-2 (missing velocity)
+   - Incomplete triplet at token 1928: p-64 (missing duration)
+   - Incomplete triplet at token 1994: p-57 d-16 (missing velocity)
+   - Incomplete triplet at token 2018: p-79 (missing duration)
+   - Incomplete triplet at token 2020: p-57 (missing duration)
+   ... and 38 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-170 d-2 v-27 o-12 t-35 i-128
+   Last 10: o-47 t-35 i-110 p-69 d-1 v-23 p-67 d-1 v-23 b-1
+
+----------------------------------------------------------------------
+
+[28/60] temp_0.7_bars_64_003.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.7
+Target bars: 64, Actual bars: 59
+Generation time: 468.4s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 8536
+   Total bars: 59
+   Total notes: 1989
+   Unique instruments: 29
+
+🎵 BAR STATISTICS:
+   Average bar length: 143.7 tokens
+   Min bar length: 55 tokens
+   Max bar length: 296 tokens
+
+🔤 TOKEN TYPES:
+   b-: 59
+   d-: 2018
+   i-: 1198
+   o-: 599
+   p-: 1989
+   s-: 59
+   t-: 595
+   v-: 2019
+
+🎹 INSTRUMENTS:
+   i-1
+   i-102
+   i-105
+   i-107
+   i-109
+   i-11
+   i-113
+   i-128
+   i-2
+   i-27
+   i-30
+   i-33
+   i-35
+   i-36
+   i-4
+   i-47
+   i-48
+   i-49
+   i-55
+   i-61
+   i-63
+   i-7
+   i-77
+   i-80
+   i-81
+   i-83
+   i-89
+   i-90
+   i-98
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 215
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 1588: p-166 (missing duration)
+   - Incomplete triplet at token 1663: p-50 (missing duration)
+   - Orphan token at 1881: d-4
+   - Incomplete triplet at token 1967: p-50 (missing duration)
+   - Incomplete triplet at token 2167: p-50 (missing duration)
+   ... and 210 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-30 p-50 d-6 v-23 p-45 d-6 v-23
+   Last 10: i-107 p-81 d-12 v-23 d-10 v-31 p-164 d-6 v-26 b-1
+
+----------------------------------------------------------------------
+
+[29/60] temp_0.7_bars_64_004.mid
+----------------------------------------------------------------------
+Status: ✓ Success (no cleaning needed)
+Temperature: 0.7
+Target bars: 64, Actual bars: 7
+Generation time: 62.0s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 1582
+   Total bars: 7
+   Total notes: 351
+   Unique instruments: 6
+
+🎵 BAR STATISTICS:
+   Average bar length: 225.0 tokens
+   Min bar length: 151 tokens
+   Max bar length: 324 tokens
+
+🔤 TOKEN TYPES:
+   b-: 7
+   d-: 351
+   i-: 237
+   o-: 139
+   p-: 351
+   s-: 7
+   t-: 139
+   v-: 351
+
+🎹 INSTRUMENTS:
+   i-0
+   i-128
+   i-27
+   i-33
+   i-51
+   i-61
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 0
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-0 p-60 d-26 v-23 p-57 d-26 v-20
+   Last 10: o-46 t-35 i-27 p-57 d-11 v-24 p-52 d-8 v-22 b-1
+
+----------------------------------------------------------------------
+
+[30/60] temp_0.7_bars_64_005.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.7
+Target bars: 64, Actual bars: 64
+Generation time: 410.2s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 7595
+   Total bars: 64
+   Total notes: 1693
+   Unique instruments: 29
+
+🎵 BAR STATISTICS:
+   Average bar length: 117.7 tokens
+   Min bar length: 29 tokens
+   Max bar length: 241 tokens
+
+🔤 TOKEN TYPES:
+   b-: 64
+   d-: 1804
+   i-: 1104
+   o-: 548
+   p-: 1693
+   s-: 64
+   t-: 539
+   v-: 1779
+
+🎹 INSTRUMENTS:
+   i-102
+   i-104
+   i-105
+   i-12
+   i-123
+   i-128
+   i-22
+   i-24
+   i-25
+   i-26
+   i-29
+   i-33
+   i-38
+   i-48
+   i-5
+   i-50
+   i-56
+   i-57
+   i-60
+   i-61
+   i-65
+   i-66
+   i-72
+   i-73
+   i-75
+   i-76
+   i-78
+   i-81
+   i-88
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 203
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 400: p-50 (missing duration)
+   - Orphan token at 1752: v-22
+   - Orphan token at 1827: d-6
+   - Incomplete triplet at token 1862: p-57 (missing duration)
+   - Orphan token at 1876: d-6
+   ... and 198 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-174 d-12 v-25 p-164 d-12 v-25
+   Last 10: p-52 d-12 v-25 o-44 t-35 i-24 p-52 d-12 v-25 b-1
+
+----------------------------------------------------------------------
+
+[31/60] temp_0.8_bars_32_001.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.8
+Target bars: 32, Actual bars: 24
+Generation time: 195.2s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 3918
+   Total bars: 24
+   Total notes: 912
+   Unique instruments: 22
+
+🎵 BAR STATISTICS:
+   Average bar length: 162.2 tokens
+   Min bar length: 13 tokens
+   Max bar length: 306 tokens
+
+🔤 TOKEN TYPES:
+   b-: 24
+   d-: 935
+   i-: 567
+   o-: 267
+   p-: 912
+   s-: 24
+   t-: 266
+   v-: 923
+
+🎹 INSTRUMENTS:
+   i-0
+   i-100
+   i-11
+   i-12
+   i-128
+   i-26
+   i-28
+   i-33
+   i-39
+   i-48
+   i-49
+   i-55
+   i-59
+   i-61
+   i-62
+   i-66
+   i-81
+   i-84
+   i-87
+   i-89
+   i-91
+   i-99
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 61
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 1913: p-67 d-8 (missing velocity)
+   - Incomplete triplet at token 1915: p-31 d-6 (missing velocity)
+   - Orphan token at 1920: d-72
+   - Incomplete triplet at token 1931: p-170 (missing duration)
+   - Orphan token at 1937: d-32
+   ... and 56 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-0 p-76 d-7 v-20 p-72 d-7 v-22
+   Last 10: v-23 i-100 p-84 d-6 v-20 i-128 p-198 d-2 v-14 b-1
+
+----------------------------------------------------------------------
+
+[32/60] temp_0.8_bars_32_002.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.8
+Target bars: 32, Actual bars: 11
+Generation time: 146.2s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 2503
+   Total bars: 11
+   Total notes: 595
+   Unique instruments: 13
+
+🎵 BAR STATISTICS:
+   Average bar length: 226.5 tokens
+   Min bar length: 195 tokens
+   Max bar length: 280 tokens
+
+🔤 TOKEN TYPES:
+   b-: 11
+   d-: 609
+   i-: 414
+   o-: 133
+   p-: 595
+   s-: 11
+   t-: 132
+   v-: 598
+
+🎹 INSTRUMENTS:
+   i-128
+   i-26
+   i-28
+   i-33
+   i-4
+   i-49
+   i-50
+   i-52
+   i-57
+   i-60
+   i-63
+   i-66
+   i-70
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 36
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 63: p-50 d-8 (missing velocity)
+   - Incomplete triplet at token 67: p-103 d-20 (missing velocity)
+   - Incomplete triplet at token 286: p-59 d-23 (missing velocity)
+   - Incomplete triplet at token 293: p-67 d-20 (missing velocity)
+   - Incomplete triplet at token 944: p-55 d-23 (missing velocity)
+   ... and 31 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-4 p-59 d-2 v-19 i-26 p-67 d-4
+   Last 10: i-28 p-64 d-18 v-19 o-46 t-35 i-52 d-12 v-18 b-1
+
+----------------------------------------------------------------------
+
+[33/60] temp_0.8_bars_32_003.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.8
+Target bars: 32, Actual bars: 19
+Generation time: 82.7s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 2164
+   Total bars: 19
+   Total notes: 490
+   Unique instruments: 5
+
+🎵 BAR STATISTICS:
+   Average bar length: 112.9 tokens
+   Min bar length: 64 tokens
+   Max bar length: 196 tokens
+
+🔤 TOKEN TYPES:
+   b-: 19
+   d-: 493
+   i-: 343
+   o-: 157
+   p-: 490
+   s-: 19
+   t-: 154
+   v-: 489
+
+🎹 INSTRUMENTS:
+   i-128
+   i-17
+   i-38
+   i-50
+   i-81
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 8
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Orphan token at 1876: d-12
+   - Incomplete triplet at token 1886: p-71 (missing duration)
+   - Orphan token at 1931: d-6
+   - Orphan token at 1961: d-27
+   - Incomplete triplet at token 2008: p-88 d-6 (missing velocity)
+   ... and 3 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-50 p-69 d-40 v-19 p-64 d-40 v-19
+   Last 10: p-170 d-6 v-27 o-45 t-35 i-38 p-36 d-3 v-24 b-1
+
+----------------------------------------------------------------------
+
+[34/60] temp_0.8_bars_32_004.mid
+----------------------------------------------------------------------
+Status: ✓ Success (no cleaning needed)
+Temperature: 0.8
+Target bars: 32, Actual bars: 39
+Generation time: 49.3s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 1842
+   Total bars: 39
+   Total notes: 410
+   Unique instruments: 1
+
+🎵 BAR STATISTICS:
+   Average bar length: 46.2 tokens
+   Min bar length: 16 tokens
+   Max bar length: 67 tokens
+
+🔤 TOKEN TYPES:
+   b-: 39
+   d-: 410
+   i-: 178
+   o-: 178
+   p-: 410
+   s-: 39
+   t-: 179
+   v-: 409
+
+🎹 INSTRUMENTS:
+   i-73
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 1
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 10: p-60 d-61 (missing velocity)
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-73 p-72 d-12 v-24 p-69 d-12 v-24
+   Last 10: o-36 t-35 i-73 p-69 d-12 v-24 p-57 d-12 v-24 b-1
+
+----------------------------------------------------------------------
+
+[35/60] temp_0.8_bars_32_005.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.8
+Target bars: 32, Actual bars: 32
+Generation time: 197.7s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 3943
+   Total bars: 32
+   Total notes: 937
+   Unique instruments: 4
+
+🎵 BAR STATISTICS:
+   Average bar length: 122.2 tokens
+   Min bar length: 55 tokens
+   Max bar length: 229 tokens
+
+🔤 TOKEN TYPES:
+   b-: 32
+   d-: 959
+   i-: 432
+   o-: 305
+   p-: 937
+   s-: 32
+   t-: 301
+   v-: 945
+
+🎹 INSTRUMENTS:
+   i-0
+   i-128
+   i-24
+   i-33
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 66
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 448: p-62 d-5 (missing velocity)
+   - Incomplete triplet at token 1536: p-41 d-5 (missing velocity)
+   - Orphan token at 1541: d-3
+   - Incomplete triplet at token 1573: p-53 d-5 (missing velocity)
+   - Incomplete triplet at token 1590: p-72 (missing duration)
+   ... and 61 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-0 p-72 d-26 v-18 p-67 d-26 v-18
+   Last 10: p-59 d-11 v-31 o-42 t-36 i-128 p-170 d-5 v-23 b-1
+
+----------------------------------------------------------------------
+
+[36/60] temp_0.8_bars_48_001.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.8
+Target bars: 48, Actual bars: 48
+Generation time: 479.1s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 9007
+   Total bars: 48
+   Total notes: 2041
+   Unique instruments: 32
+
+🎵 BAR STATISTICS:
+   Average bar length: 186.6 tokens
+   Min bar length: 46 tokens
+   Max bar length: 307 tokens
+
+🔤 TOKEN TYPES:
+   b-: 48
+   d-: 2125
+   i-: 1395
+   o-: 620
+   p-: 2041
+   s-: 48
+   t-: 617
+   v-: 2113
+
+🎹 INSTRUMENTS:
+   i-1
+   i-102
+   i-11
+   i-128
+   i-14
+   i-18
+   i-21
+   i-24
+   i-25
+   i-27
+   i-28
+   i-29
+   i-30
+   i-36
+   i-38
+   i-43
+   i-45
+   i-47
+   i-49
+   i-5
+   i-50
+   i-52
+   i-59
+   i-61
+   i-65
+   i-7
+   i-70
+   i-72
+   i-73
+   i-81
+   i-87
+   i-98
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 196
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Orphan token at 1771: v-31
+   - Orphan token at 1785: d-19
+   - Incomplete triplet at token 1788: p-170 (missing duration)
+   - Incomplete triplet at token 1790: p-170 (missing duration)
+   - Orphan token at 1792: v-15
+   ... and 191 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-170 d-0 v-31 o-12 t-35 i-128
+   Last 10: o-42 t-35 i-36 p-26 d-4 v-14 i-128 p-170 v-20 b-1
+
+----------------------------------------------------------------------
+
+[37/60] temp_0.8_bars_48_002.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.8
+Target bars: 48, Actual bars: 31
+Generation time: 307.3s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 5067
+   Total bars: 31
+   Total notes: 1154
+   Unique instruments: 29
+
+🎵 BAR STATISTICS:
+   Average bar length: 162.5 tokens
+   Min bar length: 37 tokens
+   Max bar length: 257 tokens
+
+🔤 TOKEN TYPES:
+   b-: 31
+   d-: 1200
+   i-: 809
+   o-: 331
+   p-: 1154
+   s-: 31
+   t-: 322
+   v-: 1189
+
+🎹 INSTRUMENTS:
+   i-1
+   i-103
+   i-107
+   i-11
+   i-110
+   i-114
+   i-128
+   i-18
+   i-21
+   i-22
+   i-23
+   i-26
+   i-33
+   i-4
+   i-48
+   i-52
+   i-57
+   i-59
+   i-65
+   i-69
+   i-70
+   i-71
+   i-72
+   i-8
+   i-82
+   i-85
+   i-87
+   i-92
+   i-96
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 90
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Orphan token at 152: d-2
+   - Orphan token at 447: d-2
+   - Orphan token at 777: d-2
+   - Incomplete triplet at token 1707: p-74 d-4 (missing velocity)
+   - Incomplete triplet at token 1745: p-168 (missing duration)
+   ... and 85 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-170 d-4 v-15 o-12 t-35 i-128
+   Last 10: p-74 d-2 v-16 p-71 d-2 v-16 p-67 d-2 v-16 b-1
+
+----------------------------------------------------------------------
+
+[38/60] temp_0.8_bars_48_003.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.8
+Target bars: 48, Actual bars: 24
+Generation time: 246.0s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 4285
+   Total bars: 24
+   Total notes: 1001
+   Unique instruments: 24
+
+🎵 BAR STATISTICS:
+   Average bar length: 177.5 tokens
+   Min bar length: 34 tokens
+   Max bar length: 361 tokens
+
+🔤 TOKEN TYPES:
+   b-: 24
+   d-: 1024
+   i-: 662
+   o-: 270
+   p-: 1001
+   s-: 24
+   t-: 264
+   v-: 1016
+
+🎹 INSTRUMENTS:
+   i-0
+   i-1
+   i-100
+   i-12
+   i-128
+   i-13
+   i-25
+   i-33
+   i-35
+   i-39
+   i-4
+   i-45
+   i-46
+   i-47
+   i-48
+   i-49
+   i-50
+   i-51
+   i-56
+   i-63
+   i-72
+   i-75
+   i-81
+   i-98
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 54
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Orphan token at 1643: d-2
+   - Orphan token at 1645: d-2
+   - Incomplete triplet at token 1789: p-64 d-2 (missing velocity)
+   - Incomplete triplet at token 1819: p-17 (missing duration)
+   - Incomplete triplet at token 1823: p-29 (missing duration)
+   ... and 49 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-159 d-4 v-18 o-12 t-35 i-128
+   Last 10: p-69 d-18 v-31 o-45 t-35 i-128 p-170 d-2 v-24 b-1
+
+----------------------------------------------------------------------
+
+[39/60] temp_0.8_bars_48_004.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.8
+Target bars: 48, Actual bars: 48
+Generation time: 393.0s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 7455
+   Total bars: 48
+   Total notes: 1610
+   Unique instruments: 21
+
+🎵 BAR STATISTICS:
+   Average bar length: 154.3 tokens
+   Min bar length: 35 tokens
+   Max bar length: 291 tokens
+
+🔤 TOKEN TYPES:
+   b-: 48
+   d-: 1657
+   i-: 1153
+   o-: 649
+   p-: 1610
+   s-: 47
+   t-: 645
+   v-: 1646
+
+🎹 INSTRUMENTS:
+   i-0
+   i-107
+   i-128
+   i-16
+   i-27
+   i-28
+   i-29
+   i-30
+   i-33
+   i-42
+   i-47
+   i-48
+   i-5
+   i-53
+   i-6
+   i-65
+   i-66
+   i-71
+   i-73
+   i-75
+   i-84
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 111
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 1830: p-45 (missing duration)
+   - Incomplete triplet at token 1876: p-170 d-9 (missing velocity)
+   - Incomplete triplet at token 1907: p-170 (missing duration)
+   - Orphan token at 1909: d-12
+   - Incomplete triplet at token 1913: p-41 d-30 (missing velocity)
+   ... and 106 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-33 p-52 d-6 v-25 i-128 p-164 d-12
+   Last 10: p-168 d-2 v-30 o-42 t-35 i-5 p-74 d-6 v-23 b-1
+
+----------------------------------------------------------------------
+
+[40/60] temp_0.8_bars_48_005.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.8
+Target bars: 48, Actual bars: 48
+Generation time: 326.6s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 6601
+   Total bars: 48
+   Total notes: 1555
+   Unique instruments: 14
+
+🎵 BAR STATISTICS:
+   Average bar length: 136.5 tokens
+   Min bar length: 31 tokens
+   Max bar length: 262 tokens
+
+🔤 TOKEN TYPES:
+   b-: 48
+   d-: 1562
+   i-: 912
+   o-: 450
+   p-: 1555
+   s-: 48
+   t-: 451
+   v-: 1575
+
+🎹 INSTRUMENTS:
+   i-120
+   i-128
+   i-16
+   i-20
+   i-28
+   i-30
+   i-36
+   i-38
+   i-72
+   i-73
+   i-81
+   i-87
+   i-90
+   i-92
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 83
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 1040: p-163 d-2 (missing velocity)
+   - Orphan token at 1803: d-6
+   - Incomplete triplet at token 1814: p-57 (missing duration)
+   - Incomplete triplet at token 1866: p-183 (missing duration)
+   - Incomplete triplet at token 1876: p-60 d-6 (missing velocity)
+   ... and 78 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-16 p-62 d-20 v-23 p-57 d-20 v-23
+   Last 10: v-26 i-73 p-64 d-6 v-26 i-128 p-170 d-3 v-26 b-1
+
+----------------------------------------------------------------------
+
+[41/60] temp_0.8_bars_64_001.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.8
+Target bars: 64, Actual bars: 65
+Generation time: 310.9s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 6396
+   Total bars: 65
+   Total notes: 1509
+   Unique instruments: 17
+
+🎵 BAR STATISTICS:
+   Average bar length: 97.4 tokens
+   Min bar length: 14 tokens
+   Max bar length: 215 tokens
+
+🔤 TOKEN TYPES:
+   b-: 65
+   d-: 1554
+   i-: 825
+   o-: 434
+   p-: 1509
+   s-: 65
+   t-: 425
+   v-: 1519
+
+🎹 INSTRUMENTS:
+   i-0
+   i-128
+   i-15
+   i-2
+   i-20
+   i-24
+   i-33
+   i-35
+   i-48
+   i-52
+   i-56
+   i-59
+   i-63
+   i-67
+   i-74
+   i-83
+   i-99
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 175
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Orphan token at 1617: d-5
+   - Incomplete triplet at token 1873: p-57 d-12 (missing velocity)
+   - Orphan token at 1912: d-5
+   - Incomplete triplet at token 2031: p-60 (missing duration)
+   - Incomplete triplet at token 2099: p-57 d-12 (missing velocity)
+   ... and 170 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-0 p-53 d-18 v-25 p-48 d-19 v-25
+   Last 10: i-48 p-72 d-1 v-25 o-46 t-42 i-48 d-0 v-25 b-1
+
+----------------------------------------------------------------------
+
+[42/60] temp_0.8_bars_64_002.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.8
+Target bars: 64, Actual bars: 8
+Generation time: 99.2s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 2006
+   Total bars: 8
+   Total notes: 539
+   Unique instruments: 5
+
+🎵 BAR STATISTICS:
+   Average bar length: 249.8 tokens
+   Min bar length: 212 tokens
+   Max bar length: 292 tokens
+
+🔤 TOKEN TYPES:
+   b-: 8
+   d-: 542
+   i-: 240
+   o-: 64
+   p-: 539
+   s-: 8
+   t-: 64
+   v-: 541
+
+🎹 INSTRUMENTS:
+   i-0
+   i-128
+   i-22
+   i-28
+   i-32
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 6
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 93: p-168 d-1 (missing velocity)
+   - Incomplete triplet at token 1882: p-55 d-3 (missing velocity)
+   - Orphan token at 1887: d-3
+   - Incomplete triplet at token 1903: p-62 (missing duration)
+   - Orphan token at 1958: d-12
+   ... and 1 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-28 p-43 d-4 v-23 p-38 d-3 v-22
+   Last 10: v-26 i-32 p-29 d-6 v-27 i-128 p-170 d-1 v-17 b-1
+
+----------------------------------------------------------------------
+
+[43/60] temp_0.8_bars_64_003.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.8
+Target bars: 64, Actual bars: 9
+Generation time: 110.1s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 2001
+   Total bars: 9
+   Total notes: 454
+   Unique instruments: 8
+
+🎵 BAR STATISTICS:
+   Average bar length: 221.3 tokens
+   Min bar length: 199 tokens
+   Max bar length: 318 tokens
+
+🔤 TOKEN TYPES:
+   b-: 9
+   d-: 456
+   i-: 327
+   o-: 146
+   p-: 454
+   s-: 9
+   t-: 146
+   v-: 454
+
+🎹 INSTRUMENTS:
+   i-102
+   i-119
+   i-128
+   i-14
+   i-33
+   i-45
+   i-52
+   i-77
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 22
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Orphan token at 245: v-17
+   - Orphan token at 1747: d-2
+   - Incomplete triplet at token 1752: p-84 d-2 (missing velocity)
+   - Incomplete triplet at token 1768: p-164 (missing duration)
+   - Orphan token at 1770: d-14
+   ... and 17 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-45 p-81 d-2 v-23 i-102 p-69 d-26
+   Last 10: t-35 i-52 p-79 d-1 v-22 i-128 p-168 d-12 v-29 b-1
+
+----------------------------------------------------------------------
+
+[44/60] temp_0.8_bars_64_004.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.8
+Target bars: 64, Actual bars: 44
+Generation time: 355.8s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 6780
+   Total bars: 44
+   Total notes: 1559
+   Unique instruments: 28
+
+🎵 BAR STATISTICS:
+   Average bar length: 153.1 tokens
+   Min bar length: 13 tokens
+   Max bar length: 326 tokens
+
+🔤 TOKEN TYPES:
+   b-: 44
+   d-: 1618
+   i-: 916
+   o-: 505
+   p-: 1559
+   s-: 42
+   t-: 493
+   v-: 1603
+
+🎹 INSTRUMENTS:
+   i-0
+   i-102
+   i-11
+   i-118
+   i-120
+   i-128
+   i-14
+   i-16
+   i-25
+   i-29
+   i-33
+   i-45
+   i-47
+   i-48
+   i-50
+   i-52
+   i-53
+   i-60
+   i-61
+   i-63
+   i-66
+   i-70
+   i-72
+   i-73
+   i-82
+   i-88
+   i-91
+   i-95
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 160
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Orphan token at 1002: d-12
+   - Incomplete triplet at token 1007: p-50 (missing duration)
+   - Orphan token at 1009: v-25
+   - Incomplete triplet at token 1698: p-164 (missing duration)
+   - Orphan token at 1700: d-1
+   ... and 155 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-159 d-1 v-19 o-24 t-35 i-128
+   Last 10: d-2 v-8 d-0 v-7 d-0 v-4 p-165 d-2 v-8 b-1
+
+----------------------------------------------------------------------
+
+[45/60] temp_0.8_bars_64_005.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.8
+Target bars: 64, Actual bars: 64
+Generation time: 726.4s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 12738
+   Total bars: 64
+   Total notes: 3185
+   Unique instruments: 24
+
+🎵 BAR STATISTICS:
+   Average bar length: 198.0 tokens
+   Min bar length: 25 tokens
+   Max bar length: 356 tokens
+
+🔤 TOKEN TYPES:
+   b-: 64
+   d-: 3252
+   i-: 1795
+   o-: 593
+   p-: 3185
+   s-: 63
+   t-: 589
+   v-: 3197
+
+🎹 INSTRUMENTS:
+   i-0
+   i-1
+   i-11
+   i-126
+   i-128
+   i-16
+   i-18
+   i-22
+   i-24
+   i-25
+   i-26
+   i-33
+   i-4
+   i-48
+   i-49
+   i-50
+   i-52
+   i-53
+   i-58
+   i-65
+   i-73
+   i-82
+   i-84
+   i-87
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 250
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 969: p-168 d-1 (missing velocity)
+   - Incomplete triplet at token 1083: p-41 (missing duration)
+   - Incomplete triplet at token 1084: p-60 (missing duration)
+   - Incomplete triplet at token 1092: p-41 (missing duration)
+   - Incomplete triplet at token 1303: p-38 (missing duration)
+   ... and 245 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-170 d-0 v-12 o-12 t-35 i-128
+   Last 10: d-4 v-23 i-128 p-170 d-0 v-10 p-168 d-0 v-19 b-1
+
+----------------------------------------------------------------------
+
+[46/60] temp_0.9_bars_32_001.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.9
+Target bars: 32, Actual bars: 26
+Generation time: 221.3s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 4129
+   Total bars: 26
+   Total notes: 974
+   Unique instruments: 16
+
+🎵 BAR STATISTICS:
+   Average bar length: 157.8 tokens
+   Min bar length: 25 tokens
+   Max bar length: 263 tokens
+
+🔤 TOKEN TYPES:
+   b-: 26
+   d-: 998
+   i-: 614
+   o-: 253
+   p-: 974
+   s-: 25
+   t-: 251
+   v-: 988
+
+🎹 INSTRUMENTS:
+   i-11
+   i-118
+   i-128
+   i-16
+   i-17
+   i-2
+   i-21
+   i-22
+   i-25
+   i-27
+   i-29
+   i-30
+   i-33
+   i-6
+   i-65
+   i-73
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 47
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Orphan token at 1993: d-3
+   - Orphan token at 2046: d-0
+   - Orphan token at 2072: d-10
+   - Orphan token at 2157: v-31
+   - Orphan token at 2158: d-6
+   ... and 42 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-170 d-0 v-31 o-12 t-35 i-128
+   Last 10: v-27 i-73 p-77 d-5 v-28 i-128 p-174 d-0 v-22 b-1
+
+----------------------------------------------------------------------
+
+[47/60] temp_0.9_bars_32_002.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.9
+Target bars: 32, Actual bars: 32
+Generation time: 211.3s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 4728
+   Total bars: 32
+   Total notes: 1139
+   Unique instruments: 19
+
+🎵 BAR STATISTICS:
+   Average bar length: 146.8 tokens
+   Min bar length: 31 tokens
+   Max bar length: 311 tokens
+
+🔤 TOKEN TYPES:
+   b-: 32
+   d-: 1180
+   i-: 632
+   o-: 273
+   p-: 1139
+   s-: 31
+   t-: 272
+   v-: 1169
+
+🎹 INSTRUMENTS:
+   i-0
+   i-106
+   i-118
+   i-122
+   i-128
+   i-18
+   i-24
+   i-27
+   i-33
+   i-37
+   i-44
+   i-46
+   i-48
+   i-57
+   i-6
+   i-61
+   i-62
+   i-64
+   i-87
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 82
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 870: p-28 (missing duration)
+   - Orphan token at 1794: d-4
+   - Orphan token at 1811: d-17
+   - Incomplete triplet at token 1813: p-170 (missing duration)
+   - Orphan token at 1815: v-29
+   ... and 77 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-0 p-57 d-4 v-25 i-33 p-45 d-8
+   Last 10: p-182 d-6 v-14 p-170 d-4 v-19 p-168 d-15 v-21 b-1
+
+----------------------------------------------------------------------
+
+[48/60] temp_0.9_bars_32_003.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.9
+Target bars: 32, Actual bars: 24
+Generation time: 290.1s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 4869
+   Total bars: 24
+   Total notes: 1220
+   Unique instruments: 49
+
+🎵 BAR STATISTICS:
+   Average bar length: 201.9 tokens
+   Min bar length: 32 tokens
+   Max bar length: 346 tokens
+
+🔤 TOKEN TYPES:
+   b-: 24
+   d-: 1250
+   i-: 688
+   o-: 226
+   p-: 1220
+   s-: 24
+   t-: 225
+   v-: 1212
+
+🎹 INSTRUMENTS:
+   i-0
+   i-104
+   i-108
+   i-116
+   i-128
+   i-15
+   i-17
+   i-18
+   i-19
+   i-2
+   i-21
+   i-22
+   i-24
+   i-25
+   i-26
+   i-27
+   i-28
+   i-29
+   i-3
+   i-30
+   i-33
+   i-35
+   i-4
+   i-48
+   i-49
+   i-5
+   i-52
+   i-54
+   i-56
+   i-57
+   i-60
+   i-61
+   i-62
+   i-65
+   i-66
+   i-67
+   i-68
+   i-7
+   i-70
+   i-71
+   i-73
+   i-78
+   i-81
+   i-82
+   i-83
+   i-88
+   i-9
+   i-95
+   i-99
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 94
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 1765: p-77 (missing duration)
+   - Incomplete triplet at token 1770: p-69 d-12 (missing velocity)
+   - Incomplete triplet at token 1772: p-78 d-12 (missing velocity)
+   - Incomplete triplet at token 1781: p-53 (missing duration)
+   - Incomplete triplet at token 1818: p-46 d-12 (missing velocity)
+   ... and 89 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-29 p-50 d-12 v-25 p-43 d-12 v-25
+   Last 10: v-31 i-88 p-76 d-3 v-26 i-128 p-170 d-2 v-19 b-1
+
+----------------------------------------------------------------------
+
+[49/60] temp_0.9_bars_32_004.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.9
+Target bars: 32, Actual bars: 32
+Generation time: 222.1s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 5087
+   Total bars: 32
+   Total notes: 1142
+   Unique instruments: 20
+
+🎵 BAR STATISTICS:
+   Average bar length: 158.0 tokens
+   Min bar length: 48 tokens
+   Max bar length: 399 tokens
+
+🔤 TOKEN TYPES:
+   b-: 32
+   d-: 1178
+   i-: 797
+   o-: 373
+   p-: 1142
+   s-: 32
+   t-: 369
+   v-: 1164
+
+🎹 INSTRUMENTS:
+   i-0
+   i-115
+   i-128
+   i-24
+   i-25
+   i-26
+   i-27
+   i-28
+   i-32
+   i-4
+   i-46
+   i-48
+   i-49
+   i-52
+   i-53
+   i-60
+   i-71
+   i-72
+   i-77
+   i-8
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 92
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 1651: p-69 d-1 (missing velocity)
+   - Incomplete triplet at token 1866: p-69 (missing duration)
+   - Incomplete triplet at token 1867: p-88 d-2 (missing velocity)
+   - Orphan token at 1872: v-14
+   - Orphan token at 1874: v-4
+   ... and 87 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-25 p-72 d-4 v-18 p-60 d-4 v-17
+   Last 10: v-27 i-60 p-69 d-11 v-29 i-128 p-169 d-0 v-25 b-1
+
+----------------------------------------------------------------------
+
+[50/60] temp_0.9_bars_32_005.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.9
+Target bars: 32, Actual bars: 8
+Generation time: 70.8s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 1755
+   Total bars: 8
+   Total notes: 457
+   Unique instruments: 13
+
+🎵 BAR STATISTICS:
+   Average bar length: 218.4 tokens
+   Min bar length: 65 tokens
+   Max bar length: 301 tokens
+
+🔤 TOKEN TYPES:
+   b-: 8
+   d-: 460
+   i-: 221
+   o-: 71
+   p-: 457
+   s-: 8
+   t-: 71
+   v-: 459
+
+🎹 INSTRUMENTS:
+   i-104
+   i-118
+   i-121
+   i-125
+   i-127
+   i-128
+   i-20
+   i-28
+   i-33
+   i-39
+   i-50
+   i-60
+   i-81
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 4
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 213: p-163 d-1 (missing velocity)
+   - Orphan token at 216: d-5
+   - Orphan token at 1375: d-6
+   - Orphan token at 1401: d-4
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-118 p-74 d-2 v-22 p-62 d-2 v-22
+   Last 10: v-26 i-39 p-38 d-3 v-18 i-104 p-57 d-1 v-17 b-1
+
+----------------------------------------------------------------------
+
+[51/60] temp_0.9_bars_48_001.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.9
+Target bars: 48, Actual bars: 41
+Generation time: 179.8s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 4020
+   Total bars: 41
+   Total notes: 785
+   Unique instruments: 21
+
+🎵 BAR STATISTICS:
+   Average bar length: 97.0 tokens
+   Min bar length: 23 tokens
+   Max bar length: 222 tokens
+
+🔤 TOKEN TYPES:
+   b-: 41
+   d-: 829
+   i-: 579
+   o-: 467
+   p-: 785
+   s-: 41
+   t-: 458
+   v-: 820
+
+🎹 INSTRUMENTS:
+   i-0
+   i-1
+   i-112
+   i-128
+   i-16
+   i-17
+   i-19
+   i-22
+   i-24
+   i-26
+   i-27
+   i-29
+   i-31
+   i-32
+   i-35
+   i-52
+   i-53
+   i-54
+   i-63
+   i-83
+   i-90
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 70
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Orphan token at 1782: v-30
+   - Incomplete triplet at token 1821: p-60 d-27 (missing velocity)
+   - Orphan token at 1826: d-6
+   - Orphan token at 1840: d-3
+   - Orphan token at 1842: d-6
+   ... and 65 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-0 p-69 d-6 v-15 o-6 t-35 i-0
+   Last 10: p-35 d-3 v-27 o-47 t-35 i-0 p-32 d-3 v-17 b-1
+
+----------------------------------------------------------------------
+
+[52/60] temp_0.9_bars_48_002.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.9
+Target bars: 48, Actual bars: 51
+Generation time: 63.2s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 2071
+   Total bars: 51
+   Total notes: 486
+   Unique instruments: 2
+
+🎵 BAR STATISTICS:
+   Average bar length: 39.6 tokens
+   Min bar length: 4 tokens
+   Max bar length: 148 tokens
+
+🔤 TOKEN TYPES:
+   b-: 51
+   d-: 486
+   i-: 171
+   o-: 171
+   p-: 486
+   s-: 49
+   t-: 171
+   v-: 486
+
+🎹 INSTRUMENTS:
+   i-0
+   i-1
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 2
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 1730: p-205 d-6 (missing velocity)
+   - Incomplete triplet at token 1766: p-88 (missing duration)
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-0 p-72 d-18 v-31 p-60 d-6 v-22
+   Last 10: p-86 d-6 v-17 o-42 t-35 i-1 p-83 d-6 v-17 b-1
+
+----------------------------------------------------------------------
+
+[53/60] temp_0.9_bars_48_003.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.9
+Target bars: 48, Actual bars: 42
+Generation time: 213.5s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 4634
+   Total bars: 42
+   Total notes: 974
+   Unique instruments: 27
+
+🎵 BAR STATISTICS:
+   Average bar length: 109.3 tokens
+   Min bar length: 25 tokens
+   Max bar length: 322 tokens
+
+🔤 TOKEN TYPES:
+   b-: 42
+   d-: 992
+   i-: 708
+   o-: 455
+   p-: 974
+   s-: 42
+   t-: 447
+   v-: 974
+
+🎹 INSTRUMENTS:
+   i-100
+   i-103
+   i-12
+   i-128
+   i-13
+   i-26
+   i-27
+   i-30
+   i-31
+   i-33
+   i-35
+   i-37
+   i-48
+   i-5
+   i-50
+   i-51
+   i-52
+   i-61
+   i-62
+   i-73
+   i-83
+   i-90
+   i-92
+   i-94
+   i-95
+   i-97
+   i-98
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 61
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Orphan token at 774: d-2
+   - Orphan token at 776: v-15
+   - Incomplete triplet at token 1297: p-72 (missing duration)
+   - Incomplete triplet at token 1703: p-50 d-9 (missing velocity)
+   - Incomplete triplet at token 1836: p-67 d-9 (missing velocity)
+   ... and 56 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-170 d-3 v-26 o-12 t-35 i-128
+   Last 10: i-33 p-28 d-3 v-30 i-128 p-174 d-5 v-31 i-30 b-1
+
+----------------------------------------------------------------------
+
+[54/60] temp_0.9_bars_48_004.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.9
+Target bars: 48, Actual bars: 50
+Generation time: 421.6s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 8105
+   Total bars: 50
+   Total notes: 1755
+   Unique instruments: 30
+
+🎵 BAR STATISTICS:
+   Average bar length: 161.1 tokens
+   Min bar length: 8 tokens
+   Max bar length: 342 tokens
+
+🔤 TOKEN TYPES:
+   b-: 50
+   d-: 1840
+   i-: 1293
+   o-: 659
+   p-: 1755
+   s-: 50
+   t-: 650
+   v-: 1808
+
+🎹 INSTRUMENTS:
+   i-105
+   i-107
+   i-114
+   i-115
+   i-117
+   i-118
+   i-128
+   i-16
+   i-22
+   i-28
+   i-29
+   i-3
+   i-30
+   i-33
+   i-38
+   i-39
+   i-52
+   i-56
+   i-61
+   i-66
+   i-68
+   i-7
+   i-71
+   i-75
+   i-77
+   i-80
+   i-81
+   i-83
+   i-87
+   i-92
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 223
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Orphan token at 1666: d-3
+   - Incomplete triplet at token 1671: p-69 d-4 (missing velocity)
+   - Orphan token at 1732: d-2
+   - Orphan token at 1773: d-2
+   - Incomplete triplet at token 1775: p-164 d-2 (missing velocity)
+   ... and 218 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-33 p-41 d-3 v-25 i-81 p-69 d-14
+   Last 10: p-72 d-2 v-25 o-34 t-36 i-33 p-29 d-4 v-25 b-1
+
+----------------------------------------------------------------------
+
+[55/60] temp_0.9_bars_48_005.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.9
+Target bars: 48, Actual bars: 49
+Generation time: 467.8s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 8810
+   Total bars: 49
+   Total notes: 2103
+   Unique instruments: 49
+
+🎵 BAR STATISTICS:
+   Average bar length: 178.8 tokens
+   Min bar length: 3 tokens
+   Max bar length: 340 tokens
+
+🔤 TOKEN TYPES:
+   b-: 49
+   d-: 2164
+   i-: 1178
+   o-: 570
+   p-: 2103
+   s-: 48
+   t-: 565
+   v-: 2133
+
+🎹 INSTRUMENTS:
+   i-0
+   i-105
+   i-107
+   i-11
+   i-113
+   i-124
+   i-128
+   i-14
+   i-16
+   i-18
+   i-21
+   i-23
+   i-24
+   i-25
+   i-26
+   i-27
+   i-31
+   i-32
+   i-4
+   i-44
+   i-46
+   i-48
+   i-49
+   i-53
+   i-54
+   i-56
+   i-57
+   i-58
+   i-59
+   i-61
+   i-64
+   i-65
+   i-66
+   i-67
+   i-68
+   i-69
+   i-70
+   i-71
+   i-72
+   i-75
+   i-78
+   i-79
+   i-80
+   i-86
+   i-88
+   i-89
+   i-90
+   i-91
+   i-94
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 164
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Orphan token at 112: v-23
+   - Incomplete triplet at token 210: p-84 (missing duration)
+   - Incomplete triplet at token 247: p-57 (missing duration)
+   - Incomplete triplet at token 719: p-84 (missing duration)
+   - Incomplete triplet at token 1272: p-45 (missing duration)
+   ... and 159 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-165 d-12 v-21 o-24 t-35 i-128
+   Last 10: t-35 i-25 p-62 d-2 v-11 i-128 p-172 d-3 v-12 b-1
+
+----------------------------------------------------------------------
+
+[56/60] temp_0.9_bars_64_001.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.9
+Target bars: 64, Actual bars: 54
+Generation time: 552.0s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 9960
+   Total bars: 54
+   Total notes: 2270
+   Unique instruments: 60
+
+🎵 BAR STATISTICS:
+   Average bar length: 183.4 tokens
+   Min bar length: 57 tokens
+   Max bar length: 359 tokens
+
+🔤 TOKEN TYPES:
+   b-: 54
+   d-: 2378
+   i-: 1530
+   o-: 659
+   p-: 2270
+   s-: 53
+   t-: 644
+   v-: 2372
+
+🎹 INSTRUMENTS:
+   i-0
+   i-10
+   i-102
+   i-107
+   i-108
+   i-118
+   i-122
+   i-128
+   i-18
+   i-19
+   i-2
+   i-20
+   i-21
+   i-24
+   i-25
+   i-26
+   i-27
+   i-28
+   i-29
+   i-30
+   i-32
+   i-33
+   i-34
+   i-35
+   i-36
+   i-38
+   i-40
+   i-41
+   i-43
+   i-45
+   i-47
+   i-48
+   i-49
+   i-5
+   i-50
+   i-51
+   i-52
+   i-53
+   i-54
+   i-56
+   i-57
+   i-58
+   i-6
+   i-60
+   i-61
+   i-62
+   i-66
+   i-68
+   i-7
+   i-71
+   i-73
+   i-8
+   i-80
+   i-81
+   i-83
+   i-88
+   i-9
+   i-90
+   i-94
+   i-98
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 296
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 104: p-69 (missing duration)
+   - Orphan token at 106: v-25
+   - Orphan token at 1605: d-15
+   - Orphan token at 1635: d-13
+   - Orphan token at 1702: d-25
+   ... and 291 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-35 p-45 d-12 v-23 i-80 p-72 d-12
+   Last 10: d-9 v-23 t-35 o-46 t-36 i-73 p-90 d-1 v-23 b-1
+
+----------------------------------------------------------------------
+
+[57/60] temp_0.9_bars_64_002.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.9
+Target bars: 64, Actual bars: 65
+Generation time: 164.9s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 4259
+   Total bars: 65
+   Total notes: 933
+   Unique instruments: 7
+
+🎵 BAR STATISTICS:
+   Average bar length: 64.5 tokens
+   Min bar length: 19 tokens
+   Max bar length: 110 tokens
+
+🔤 TOKEN TYPES:
+   b-: 65
+   d-: 938
+   i-: 536
+   o-: 393
+   p-: 933
+   s-: 64
+   t-: 392
+   v-: 938
+
+🎹 INSTRUMENTS:
+   i-0
+   i-128
+   i-24
+   i-43
+   i-66
+   i-88
+   i-9
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 44
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 1936: p-41 d-12 (missing velocity)
+   - Orphan token at 1960: d-12
+   - Incomplete triplet at token 1968: p-48 (missing duration)
+   - Orphan token at 2011: d-6
+   - Incomplete triplet at token 2025: p-52 d-14 (missing velocity)
+   ... and 39 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-0 p-65 d-15 v-15 p-57 d-18 v-15
+   Last 10: p-182 d-5 v-20 o-42 t-35 i-0 p-60 d-6 v-20 b-1
+
+----------------------------------------------------------------------
+
+[58/60] temp_0.9_bars_64_003.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.9
+Target bars: 64, Actual bars: 57
+Generation time: 262.9s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 5220
+   Total bars: 57
+   Total notes: 1187
+   Unique instruments: 7
+
+🎵 BAR STATISTICS:
+   Average bar length: 90.6 tokens
+   Min bar length: 10 tokens
+   Max bar length: 331 tokens
+
+🔤 TOKEN TYPES:
+   b-: 57
+   d-: 1197
+   i-: 619
+   o-: 457
+   p-: 1187
+   s-: 57
+   t-: 454
+   v-: 1192
+
+🎹 INSTRUMENTS:
+   i-0
+   i-1
+   i-128
+   i-30
+   i-33
+   i-71
+   i-81
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 77
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 1876: p-69 (missing duration)
+   - Incomplete triplet at token 1883: p-178 (missing duration)
+   - Incomplete triplet at token 1905: p-76 (missing duration)
+   - Orphan token at 1947: v-25
+   - Orphan token at 1948: d-10
+   ... and 72 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-0 p-72 d-12 v-18 o-12 t-35 i-0
+   Last 10: p-77 d-3 v-12 o-46 t-35 i-0 p-87 d-2 v-12 b-1
+
+----------------------------------------------------------------------
+
+[59/60] temp_0.9_bars_64_004.mid
+----------------------------------------------------------------------
+Status: ✓ Success (with cleaning)
+Temperature: 0.9
+Target bars: 64, Actual bars: 64
+Generation time: 608.9s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 10226
+   Total bars: 64
+   Total notes: 2350
+   Unique instruments: 37
+
+🎵 BAR STATISTICS:
+   Average bar length: 158.8 tokens
+   Min bar length: 19 tokens
+   Max bar length: 290 tokens
+
+🔤 TOKEN TYPES:
+   b-: 64
+   d-: 2468
+   i-: 1484
+   o-: 691
+   p-: 2350
+   s-: 63
+   t-: 680
+   v-: 2426
+
+🎹 INSTRUMENTS:
+   i-0
+   i-11
+   i-119
+   i-12
+   i-127
+   i-128
+   i-18
+   i-21
+   i-24
+   i-25
+   i-26
+   i-27
+   i-28
+   i-30
+   i-32
+   i-33
+   i-35
+   i-39
+   i-48
+   i-49
+   i-52
+   i-54
+   i-56
+   i-57
+   i-59
+   i-60
+   i-61
+   i-62
+   i-63
+   i-64
+   i-65
+   i-66
+   i-68
+   i-70
+   i-82
+   i-88
+   i-96
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 297
+
+⚠️  GRAMMAR ERRORS (showing first 5):
+   - Incomplete triplet at token 1756: p-55 d-3 (missing velocity)
+   - Orphan token at 1763: d-14
+   - Orphan token at 1864: d-10
+   - Orphan token at 1983: d-5
+   - Incomplete triplet at token 1986: p-190 d-1 (missing velocity)
+   ... and 292 more
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-128 p-192 d-1 v-18 o-6 t-35 i-128
+   Last 10: p-192 d-3 v-21 p-170 d-3 v-21 p-163 d-3 v-23 b-1
+
+----------------------------------------------------------------------
+
+[60/60] temp_0.9_bars_64_005.mid
+----------------------------------------------------------------------
+Status: ✓ Success (no cleaning needed)
+Temperature: 0.9
+Target bars: 64, Actual bars: 16
+Generation time: 73.1s
+
+📊 OVERALL STATISTICS:
+   Total tokens: 1839
+   Total bars: 16
+   Total notes: 425
+   Unique instruments: 3
+
+🎵 BAR STATISTICS:
+   Average bar length: 113.9 tokens
+   Min bar length: 1 tokens
+   Max bar length: 173 tokens
+
+🔤 TOKEN TYPES:
+   b-: 16
+   d-: 425
+   i-: 304
+   o-: 114
+   p-: 425
+   s-: 16
+   t-: 114
+   v-: 425
+
+🎹 INSTRUMENTS:
+   i-0
+   i-24
+   i-25
+
+✅ SEQUENCE HEALTH:
+   Ends with b-1: ✓
+   Grammar errors: 0
+
+🔍 SEQUENCE EDGES:
+   First 10: s-9 o-0 t-35 i-0 p-40 d-6 v-23 i-24 p-52 d-6
+   Last 10: d-6 v-23 p-47 d-6 v-23 i-25 p-23 d-6 v-23 b-1
+
+----------------------------------------------------------------------
+
+======================================================================
+SUMMARY STATISTICS
+======================================================================
+Total pieces: 60
+Successful: 60 (100.0%)
+Failed: 0 (0.0%)
+Required cleaning: 57 (95.0% of successful)
+
+Average bars generated: 38.9
+Average tokens: 5214.4
+Average generation time: 261.8s
+Average instruments: 18.5
+Average grammar errors: 97.6
+======================================================================
