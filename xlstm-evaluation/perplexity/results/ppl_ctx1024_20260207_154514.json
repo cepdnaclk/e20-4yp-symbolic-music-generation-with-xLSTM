@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-02-07T15:45:14.465888",
+  "model_path": "/scratch1/e20-fyp-xlstm-music-generation/e20fyptemp1/fyp-musicgen/repos/helibrunna/output/xlstm_lmd_512d_2048ctx_12b/run_20260126-0516",
+  "data_file": "/scratch1/e20-fyp-xlstm-music-generation/e20fyptemp1/fyp-musicgen/data/lmd_preprocessed/splits/test.txt",
+  "perplexity": 4.478137766052861,
+  "avg_nll": 1.4992072827888259,
+  "total_tokens": 5115,
+  "num_sequences": 5,
+  "num_evaluated": 5,
+  "skipped_sequences": 0,
+  "max_context": 1024,
+  "sequence_results_count": 5
+}

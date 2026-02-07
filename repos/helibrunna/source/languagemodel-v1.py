@@ -26,17 +26,11 @@ from .utilities import display_logo, model_from_config
 
 class LanguageModel:
 
-    def __init__(self, model_path_or_repo, config_overrides={}, mask_special_tokens=True, device="auto", ignore_tokenizer=False, checkpoint_name=None):
+    def __init__(self, model_path_or_repo, config_overrides={}, mask_special_tokens=True, device="auto", ignore_tokenizer=False):
         """
         Initializes the LanguageModel object.
         Args:
             model_path_or_repo (str): The path to the model or the repository ID.
-            config_overrides (dict): Overrides for the model configuration (e.g., context_length).
-            mask_special_tokens (bool): Whether to mask special tokens.
-            device (str): Device to use ('auto', 'cuda', 'cpu', 'mps').
-            ignore_tokenizer (bool): Whether to skip loading the tokenizer.
-            checkpoint_name (str): Optional checkpoint folder name (e.g., 'checkpoint-80000').
-                                   If None, uses the checkpoint ending with '-last'.
         Raises:
             ValueError: If the model checkpoint, tokenizer, config, or weights are not found.
             Exception: If failed to download the model.
@@ -95,20 +89,13 @@ class LanguageModel:
             tokenizer_path = model_path_or_repo
 
             # Find all the checkpoint folders, folders that start with "checkpoint-". Then find the last one.
-            # If checkpoint_name is provided, use that specific checkpoint.
-            if checkpoint_name is not None:
-                model_path = os.path.join(model_path_or_repo, checkpoint_name)
-                if not os.path.exists(model_path):
-                    raise ValueError(f"Specified checkpoint not found: {model_path}")
-            else:
-                # Default behavior: find checkpoint ending with "-last"
-                checkpoint_folders = glob.glob(os.path.join(model_path_or_repo, "checkpoint-*"))
-                for checkpoint_folder in checkpoint_folders:
-                    if checkpoint_folder.endswith("-last"):
-                        model_path = checkpoint_folder
-                        break
-                if model_path is None:
-                    raise ValueError("No model checkpoint found.")
+            checkpoint_folders = glob.glob(os.path.join(model_path_or_repo, "checkpoint-*"))
+            for checkpoint_folder in checkpoint_folders:
+                if checkpoint_folder.endswith("-last"):
+                    model_path = checkpoint_folder
+                    break
+            if model_path is None:
+                raise ValueError("No model checkpoint found.")
 
             # Find the tokenizer folder.
             if os.path.exists(os.path.join(model_path_or_repo, "tokenizer.json")):
