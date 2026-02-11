@@ -103,6 +103,20 @@ MIDIMINER_JSON_PATH = FYP_MUSICGEN_ROOT / "data" / "museformer_baseline" / "full
 MIDIMINER_CLEANUP_INPUT = True
 
 # =============================================================================
+# STAGE 2: MIDIMINER BATCH PROCESSING
+# =============================================================================
+
+# Batch size for midiminer processing (to prevent OOM crashes)
+# Process files in batches to reduce memory usage
+MIDIMINER_BATCH_SIZE = 15000  # Process 15k files per batch
+
+# Whether to enable batch processing (auto-detect if None)
+# - None: Auto-enable if total files > batch size
+# - True: Always use batch processing
+# - False: Never use batch processing (process all at once)
+MIDIMINER_ENABLE_BATCHING = True
+
+# =============================================================================
 # STAGE 3: COMPRESSION TO 6 TRACKS
 # =============================================================================
 

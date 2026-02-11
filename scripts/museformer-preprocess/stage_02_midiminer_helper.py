@@ -21,21 +21,226 @@ from manifest_utils import ManifestManager
 from pipeline_config import (
     PipelineConfig, STAGE_NAMES, MIDIMINER_JSON_FILENAME, MIDIMINER_JSON_PATH,
     MIDIMINER_SCRIPT, MIDIMINER_CONDA_ENV, MIDIMINER_TEMP_DIR, MIDIMINER_JOBLIB_TEMP,
-    MIDIMINER_TARGET_TRACK, MIDIMINER_NUM_CORES
+    MIDIMINER_TARGET_TRACK, MIDIMINER_NUM_CORES,
+    MIDIMINER_BATCH_SIZE, MIDIMINER_ENABLE_BATCHING
 )
 
 logger = logging.getLogger(__name__)
+
+
+def should_use_batching(num_files: int) -> bool:
+    """
+    Determine if batch processing should be used.
+    
+    Args:
+        num_files: Total number of files to process
+    
+    Returns:
+        True if batching should be used
+    """
+    if MIDIMINER_ENABLE_BATCHING is None:
+        # Auto-detect: use batching if files > batch size
+        return num_files > MIDIMINER_BATCH_SIZE
+    else:
+        return MIDIMINER_ENABLE_BATCHING
+
+
+def get_file_batches(input_dir: Path, batch_size: int) -> list:
+    """
+    Split MIDI files into batches.
+    
+    Args:
+        input_dir: Directory containing MIDI files
+        batch_size: Number of files per batch
+    
+    Returns:
+        List of lists, where each inner list contains Path objects for a batch
+    """
+    # Get all MIDI files
+    midi_files = []
+    for ext in ['*.mid', '*.midi', '*.MID', '*.MIDI']:
+        midi_files.extend(list(input_dir.glob(ext)))
+    
+    # Sort for consistent ordering
+    midi_files.sort()
+    
+    # Split into batches
+    batches = []
+    for i in range(0, len(midi_files), batch_size):
+        batch = midi_files[i:i + batch_size]
+        batches.append(batch)
+    
+    return batches
+
+
+def run_midiminer_batch(
+    batch_files: list,
+    batch_num: int,
+    total_batches: int,
+    config: PipelineConfig
+) -> dict:
+    """
+    Run midiminer on a single batch of files.
+    
+    Args:
+        batch_files: List of Path objects for this batch
+        batch_num: Current batch number (1-indexed)
+        total_batches: Total number of batches
+        config: Pipeline configuration
+    
+    Returns:
+        Dict with batch results
+    """
+    logger.info(f"Processing batch {batch_num}/{total_batches} ({len(batch_files)} files)")
+    
+    # Create temporary batch directory
+    batch_temp_dir = MIDIMINER_TEMP_DIR / f"batch_{batch_num:03d}"
+    batch_input_dir = batch_temp_dir / "input"
+    batch_output_dir = batch_temp_dir / "output"
+    
+    batch_input_dir.mkdir(parents=True, exist_ok=True)
+    batch_output_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Get main output directory to check for already-processed files
+    main_output_dir = config.dirs['midiminer_output']
+    main_output_dir.mkdir(parents=True, exist_ok=True)
+    
+    try:
+        # Filter out files that have already been processed
+        # Check if output exists in MAIN output directory (not temp)
+        files_to_process = []
+        files_already_processed = 0
+        
+        for src_file in batch_files:
+            # Check if this file has already been processed in the main output directory
+            output_file = main_output_dir / src_file.name
+            if output_file.exists():
+                files_already_processed += 1
+            else:
+                files_to_process.append(src_file)
+        
+        logger.info(f"  Files in batch: {len(batch_files)}")
+        logger.info(f"  Already processed: {files_already_processed}")
+        logger.info(f"  To process: {len(files_to_process)}")
+        
+        # If all files already processed, skip this batch
+        if len(files_to_process) == 0:
+            logger.info(f"  ✓ Batch {batch_num} already complete, skipping")
+            
+            # Still need to return the results for these files
+            # Read existing files to build the file_programs dict
+            batch_file_programs = {}
+            # We can't easily reconstruct the JSON here, so return empty
+            # The final merge will handle this
+            return {
+                'status': 'success',
+                'batch': batch_num,
+                'file_programs': {},  # Empty since already merged
+                'files_processed': 0,
+                'files_with_melody': 0,
+                'skipped': True
+            }
+        
+        # Copy batch files to temp input directory (only files that need processing)
+        logger.info(f"  Copying {len(files_to_process)} files to batch input directory...")
+        for src_file in files_to_process:
+            dst_file = batch_input_dir / src_file.name
+            if not dst_file.exists():
+                shutil.copy2(src_file, dst_file)
+        
+        # Build midiminer command for this batch
+        cmd = f"""
+source $(conda info --base)/etc/profile.d/conda.sh && \\
+conda activate {MIDIMINER_CONDA_ENV} && \\
+export TMPDIR={MIDIMINER_TEMP_DIR} && \\
+export JOBLIB_TEMP_FOLDER={MIDIMINER_JOBLIB_TEMP} && \\
+cd {MIDIMINER_SCRIPT.parent} && \\
+python {MIDIMINER_SCRIPT.name} \\
+    -i {batch_input_dir} \\
+    -o {batch_output_dir} \\
+    -t {MIDIMINER_TARGET_TRACK} \\
+    -c {MIDIMINER_NUM_CORES}
+"""
+        
+        logger.info(f"  Running midiminer on batch {batch_num}...")
+        
+        # Run the command
+        result = subprocess.run(
+            ["bash", "-c", cmd],
+            capture_output=True,
+            text=True,
+            check=True
+        )
+        
+        logger.info(f"  Batch {batch_num} completed successfully")
+        
+        # Read batch results JSON
+        batch_json = batch_output_dir / MIDIMINER_JSON_FILENAME
+        if not batch_json.exists():
+            logger.error(f"  Batch {batch_num} JSON not found: {batch_json}")
+            return {'status': 'error', 'error': 'batch_json_not_found', 'batch': batch_num}
+        
+        with open(batch_json, 'r') as f:
+            batch_results = json.load(f)
+        
+        # Move processed files from batch output to main output
+        main_output_dir = config.dirs['midiminer_output']
+        main_output_dir.mkdir(parents=True, exist_ok=True)
+        
+        files_moved = 0
+        for output_file in batch_output_dir.glob('*.mid'):
+            dst_file = main_output_dir / output_file.name
+            shutil.move(str(output_file), str(dst_file))
+            files_moved += 1
+        
+        logger.info(f"  Moved {files_moved} processed files to main output directory")
+        logger.info(f"  Batch {batch_num}: {len(batch_results)} files with melody")
+        
+        return {
+            'status': 'success',
+            'batch': batch_num,
+            'file_programs': batch_results,
+            'files_processed': len(batch_files),
+            'files_with_melody': len(batch_results)
+        }
+    
+    except subprocess.CalledProcessError as e:
+        logger.error(f"  Batch {batch_num} failed with exit code {e.returncode}")
+        logger.error(f"  STDERR: {e.stderr[-500:]}")  # Last 500 chars
+        return {
+            'status': 'error',
+            'error': str(e),
+            'batch': batch_num,
+            'returncode': e.returncode
+        }
+    
+    except Exception as e:
+        logger.error(f"  Batch {batch_num} failed with exception: {e}")
+        return {
+            'status': 'error',
+            'error': str(e),
+            'batch': batch_num
+        }
+    
+    finally:
+        # Clean up batch temp directory
+        if batch_temp_dir.exists():
+            shutil.rmtree(batch_temp_dir)
+            logger.info(f"  Cleaned up batch {batch_num} temp directory")
 
 
 def run_stage_2_midiminer(config: PipelineConfig) -> dict:
     """
     Run midiminer track separation automatically.
     
+    Supports batch processing for large datasets to prevent OOM crashes.
+    
     This function:
     1. Creates temp directories for joblib
-    2. Builds command to activate conda and run midiminer
-    3. Executes the command
-    4. Validates output JSON exists
+    2. Determines if batch processing is needed
+    3. If batching: processes files in batches and merges results
+    4. If not batching: processes all files at once
+    5. Validates output JSON exists
     
     Args:
         config: Pipeline configuration
@@ -63,12 +268,108 @@ def run_stage_2_midiminer(config: PipelineConfig) -> dict:
     
     # Count input files
     num_files = len(list(in_dir.glob('*.mid'))) + len(list(in_dir.glob('*.midi')))
-    logger.info(f"Processing {num_files} MIDI files from {in_dir}")
+    logger.info(f"Total files to process: {num_files}")
+    logger.info(f"Input directory: {in_dir}")
     logger.info(f"Output directory: {out_dir}")
+    logger.info("")
     
-    # Build command to run midiminer with conda activation
-    # We need to source conda and activate the environment
-    cmd = f"""
+    # Determine if batch processing should be used
+    use_batching = should_use_batching(num_files)
+    
+    if use_batching:
+        logger.info(f"✓ Batch processing ENABLED")
+        logger.info(f"  Batch size: {MIDIMINER_BATCH_SIZE} files")
+        logger.info(f"  Total batches: {(num_files + MIDIMINER_BATCH_SIZE - 1) // MIDIMINER_BATCH_SIZE}")
+        logger.info("")
+        
+        # Get file batches
+        batches = get_file_batches(in_dir, MIDIMINER_BATCH_SIZE)
+        total_batches = len(batches)
+        
+        logger.info(f"Split {num_files} files into {total_batches} batches")
+        logger.info("")
+        
+        # Process each batch
+        all_file_programs = {}
+        batch_stats = []
+        failed_batches = []
+        skipped_batches = []
+        
+        for batch_num, batch_files in enumerate(batches, 1):
+            logger.info("=" * 80)
+            batch_result = run_midiminer_batch(
+                batch_files, batch_num, total_batches, config
+            )
+            
+            if batch_result['status'] == 'success':
+                # Check if batch was skipped
+                if batch_result.get('skipped', False):
+                    skipped_batches.append(batch_num)
+                    logger.info(f"⊘ Batch {batch_num} skipped (already processed)")
+                else:
+                    # Merge batch results
+                    all_file_programs.update(batch_result['file_programs'])
+                    batch_stats.append({
+                        'batch': batch_num,
+                        'files_processed': batch_result['files_processed'],
+                        'files_with_melody': batch_result['files_with_melody']
+                    })
+                    logger.info(f"✓ Batch {batch_num} completed: {batch_result['files_with_melody']} files with melody")
+            else:
+                failed_batches.append(batch_num)
+                logger.error(f"✗ Batch {batch_num} FAILED: {batch_result.get('error')}")
+            
+            logger.info("")
+        
+        # Save final merged JSON
+        final_json = out_dir / MIDIMINER_JSON_FILENAME
+        with open(final_json, 'w') as f:
+            json.dump(all_file_programs, f, indent=2, ensure_ascii=False)
+        
+        logger.info("=" * 80)
+        logger.info("BATCH PROCESSING COMPLETE")
+        logger.info("=" * 80)
+        logger.info(f"Total batches: {total_batches}")
+        logger.info(f"Processed batches: {len(batch_stats)}")
+        logger.info(f"Skipped batches: {len(skipped_batches)}")
+        if skipped_batches:
+            logger.info(f"  Skipped batch numbers: {skipped_batches}")
+        logger.info(f"Failed batches: {len(failed_batches)}")
+        if failed_batches:
+            logger.info(f"  Failed batch numbers: {failed_batches}")
+        logger.info(f"Total files with melody: {len(all_file_programs)}")
+        logger.info(f"Final JSON: {final_json}")
+        logger.info("")
+        
+        if failed_batches:
+            return {
+                'status': 'partial_success',
+                'num_files': num_files,
+                'num_batches': total_batches,
+                'processed_batches': len(batch_stats),
+                'skipped_batches': skipped_batches,
+                'failed_batches': failed_batches,
+                'files_with_melody': len(all_file_programs),
+                'batch_stats': batch_stats
+            }
+        else:
+            return {
+                'status': 'success',
+                'num_files': num_files,
+                'num_batches': total_batches,
+                'processed_batches': len(batch_stats),
+                'skipped_batches': skipped_batches,
+                'files_with_melody': len(all_file_programs),
+                'batch_stats': batch_stats
+            }
+    
+    else:
+        # Single-run processing (original logic)
+        logger.info(f"✓ Single-run processing (batch processing not needed)")
+        logger.info("")
+        
+        # Build command to run midiminer with conda activation
+        cmd = f"""
 source $(conda info --base)/etc/profile.d/conda.sh && \\
 conda activate {MIDIMINER_CONDA_ENV} && \\
 export TMPDIR={MIDIMINER_TEMP_DIR} && \\
@@ -80,54 +381,54 @@ python {MIDIMINER_SCRIPT.name} \\
     -t {MIDIMINER_TARGET_TRACK} \\
     -c {MIDIMINER_NUM_CORES}
 """
-    
-    logger.info("Executing midiminer command:")
-    logger.info(f"  Conda env: {MIDIMINER_CONDA_ENV}")
-    logger.info(f"  Script: {MIDIMINER_SCRIPT}")
-    logger.info(f"  Target track: {MIDIMINER_TARGET_TRACK}")
-    logger.info(f"  Cores: {MIDIMINER_NUM_CORES}")
-    logger.info("")
-    
-    try:
-        # Run the command
-        result = subprocess.run(
-            ["bash", "-c", cmd],
-            capture_output=True,
-            text=True,
-            check=True
-        )
         
-        logger.info("Midiminer execution completed successfully")
-        
-        # Log output (last 20 lines)
-        if result.stdout:
-            lines = result.stdout.strip().split('\n')
-            logger.info("Midiminer output (last 20 lines):")
-            for line in lines[-20:]:
-                logger.info(f"  {line}")
-        
-        # Validate output JSON exists
-        output_json = out_dir / MIDIMINER_JSON_FILENAME
-        if output_json.exists():
-            logger.info(f"✓ Output JSON created: {output_json}")
-            file_size = output_json.stat().st_size
-            logger.info(f"  Size: {file_size / 1024:.1f} KB")
-        else:
-            logger.error(f"✗ Output JSON not found: {output_json}")
-            return {'status': 'error', 'error': 'output_json_not_found'}
-        
+        logger.info("Executing midiminer command:")
+        logger.info(f"  Conda env: {MIDIMINER_CONDA_ENV}")
+        logger.info(f"  Script: {MIDIMINER_SCRIPT}")
+        logger.info(f"  Target track: {MIDIMINER_TARGET_TRACK}")
+        logger.info(f"  Cores: {MIDIMINER_NUM_CORES}")
         logger.info("")
-        return {'status': 'success', 'num_files': num_files}
-    
-    except subprocess.CalledProcessError as e:
-        logger.error(f"Midiminer execution failed with exit code {e.returncode}")
-        logger.error(f"STDOUT:\n{e.stdout}")
-        logger.error(f"STDERR:\n{e.stderr}")
-        return {'status': 'error', 'error': str(e), 'returncode': e.returncode}
-    
-    except Exception as e:
-        logger.error(f"Unexpected error running midiminer: {e}")
-        return {'status': 'error', 'error': str(e)}
+        
+        try:
+            # Run the command
+            result = subprocess.run(
+                ["bash", "-c", cmd],
+                capture_output=True,
+                text=True,
+                check=True
+            )
+            
+            logger.info("Midiminer execution completed successfully")
+            
+            # Log output (last 20 lines)
+            if result.stdout:
+                lines = result.stdout.strip().split('\n')
+                logger.info("Midiminer output (last 20 lines):")
+                for line in lines[-20:]:
+                    logger.info(f"  {line}")
+            
+            # Validate output JSON exists
+            output_json = out_dir / MIDIMINER_JSON_FILENAME
+            if output_json.exists():
+                logger.info(f"✓ Output JSON created: {output_json}")
+                file_size = output_json.stat().st_size
+                logger.info(f"  Size: {file_size / 1024:.1f} KB")
+            else:
+                logger.error(f"✗ Output JSON not found: {output_json}")
+                return {'status': 'error', 'error': 'output_json_not_found'}
+            
+            logger.info("")
+            return {'status': 'success', 'num_files': num_files}
+        
+        except subprocess.CalledProcessError as e:
+            logger.error(f"Midiminer execution failed with exit code {e.returncode}")
+            logger.error(f"STDOUT:\n{e.stdout}")
+            logger.error(f"STDERR:\n{e.stderr}")
+            return {'status': 'error', 'error': str(e), 'returncode': e.returncode}
+        
+        except Exception as e:
+            logger.error(f"Unexpected error running midiminer: {e}")
+            return {'status': 'error', 'error': str(e)}
 
 
 

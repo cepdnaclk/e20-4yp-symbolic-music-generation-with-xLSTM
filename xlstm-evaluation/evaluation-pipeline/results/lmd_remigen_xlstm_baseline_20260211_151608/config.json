@@ -1,0 +1,32 @@
+{
+  "config": {
+    "model_run_path": "/scratch1/e20-fyp-xlstm-music-generation/e20fyptemp1/fyp-musicgen/repos/helibrunna/output/xlstm_lmd_256d_2048ctx_12b/run_20260115-1028",
+    "context_lengths": [
+      1024,
+      2048,
+      3072,
+      4096,
+      5120,
+      10240
+    ],
+    "checkpoint_selection": "auto",
+    "auto_checkpoint_count": 6,
+    "results_base_dir": "./results",
+    "save_plots": true,
+    "plot_format": "png"
+  },
+  "model_info": {
+    "model_name": "lmd_remigen_xlstm_baseline",
+    "training_context_length": 2048,
+    "embedding_dim": 256,
+    "num_blocks": 12,
+    "vocab_size": 675,
+    "batch_size": 8,
+    "learning_rate": 0.001,
+    "valid_data_path": "/scratch1/e20-fyp-xlstm-music-generation/e20fyptemp1/fyp-musicgen/data/lmd_preprocessed/splits/valid.txt",
+    "test_data_path": "/scratch1/e20-fyp-xlstm-music-generation/e20fyptemp1/fyp-musicgen/data/lmd_preprocessed/splits/test.txt",
+    "tokenizer_path": "/scratch1/e20-fyp-xlstm-music-generation/e20fyptemp1/fyp-musicgen/repos/helibrunna/output/xlstm_lmd_256d_2048ctx_12b/run_20260115-1028/tokenizer.json"
+  },
+  "best_checkpoint": "checkpoint-13000",
+  "timestamp": "20260211_151608"
+}
