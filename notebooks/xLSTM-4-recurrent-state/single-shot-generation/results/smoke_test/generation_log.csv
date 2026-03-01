@@ -1,0 +1,2 @@
+strategy,target_tokens,piece_id,filename,actual_tokens,target_reached,num_bars,num_notes,num_instruments,grammar_error_rate,incomplete_triplets,orphan_tokens,tokens_per_bar_mean,tokens_per_bar_std,ends_with_bar,repair_needed,success,generation_time_s,tokens_per_second,num_chunks,seed
+single_shot,1024,1,single_shot_01024tok_001.mid,1024,True,14,249,1,0.000977,1,0,70.57,40.88,False,True,True,7.14,142.91,1,1042

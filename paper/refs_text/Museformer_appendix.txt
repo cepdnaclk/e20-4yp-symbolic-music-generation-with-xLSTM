@@ -1,0 +1,311 @@
+                             A SimilarityStatistics on Different Datasets
+                             Weconductthesimilarity statistics introduced in ¬ß3.3 on the whole LMD dataset that we use, and
+                             exhibit the results in Figure 6. We can observe that the periodical structure pattern, that a music bar
+                             tends to be more similar to its previous 2 bars, and also to the previous 4-th bar or its multipliers in
+                             most cases, is also satisfied on this set of music. Specifically, this rule holds on all of the instrument
+                             tracks except the drum track. This makes sense because the percussive instruments usually play the
+                             samerhythmic patterns over and over throughout a song.
+                                10
+                                 8
+                                 6
+                               Similarity (%)4
+                                 2
+                                 0 0        4         8        12       16        20       24        28       32        36       40
+                                                                              Interval (bar)
+                                                                         (a) Melody track.
+                                25                                                   20
+                                                                                     18
+                                20                                                   16
+                                                                                     14
+                                15                                                   12
+                                                                                     10
+                               Similarity (%)10                                     Similarity (%)8
+                                                                                      6
+                                 5                                                    4
+                                                                                      2
+                                 0 0  4    8   12  16  20   24  28   32  36  40       0 0  4    8   12  16   20  24  28   32  36  40
+                                                    Interval (bar)                                       Interval (bar)
+                                                (b) All tracks.                                     (c) Piano track.
+                                25                                                   14
+                                20                                                   12
+                                                                                     10
+                                15                                                    8
+                               Similarity (%)10                                     Similarity (%)6
+                                                                                      4
+                                 5                                                    2
+                                 0 0  4    8   12  16  20   24  28   32  36  40       0 0  4    8   12  16   20  24  28   32  36  40
+                                                    Interval (bar)                                       Interval (bar)
+                                               (d) Guitar track.                                    (e) String track.
+                                                                                     70
+                                25                                                   60
+                                20                                                   50
+                                15                                                   40
+                                                                                     30
+                               Similarity (%)10                                     Similarity (%)20
+                                 5                                                   10
+                                 0 0  4    8   12  16  20   24  28   32  36  40       0 0  4    8   12  16   20  24  28   32  36  40
+                                                    Interval (bar)                                       Interval (bar)
+                                                (f) Bass track.                                     (g) Drum track.
+                                               Figure 6: The similarity distribution of the LMD dataset we use.
+                                                                                14
+                                  Toseethestructure pattern of music of different genres, we conduct the same similarity statistics on
+                                  the Top-MAGDdataset 6, which annotates altogether 13 music genres to the songs. Figure 7 shows
+                                  that although different genres have their specific distributions, the general pattern is still applicable to
+                                  all of these genres.
+                                                                                                                        20
+                                    10                                        10
+                                     8                                         8                                        15
+                                     6                                         6                                        10
+                                    Similarity (%)4                          Similarity (%)4                           Similarity (%)
+                                     2                                         2                                        5
+                                     0 0 4   8  12 16 20  24 28  32 36 40      0 0 4  8  12  16 20  24 28 32  36 40     0 0  4  8  12  16 20 24  28 32  36 40
+                                                    Interval (bar)                            Interval (bar)                            Interval (bar)
+                                              (a) All genres.                           (b) Pop/rock.                            (c) Electronic.
+                                    18                                        10
+                                    16                                                                                  10
+                                    14                                         8
+                                    12                                                                                  8
+                                    10                                         6                                        6
+                                     8                                         4
+                                    Similarity (%)6                          Similarity (%)                            Similarity (%)4
+                                     4                                         2                                        2
+                                     2
+                                     0 0 4   8  12 16 20  24 28  32 36 40      0 0 4  8  12  16 20  24 28 32  36 40     0 0  4  8  12  16 20 24  28 32  36 40
+                                                    Interval (bar)                            Interval (bar)                            Interval (bar)
+                                                 (d) Rap.                                  (e) Jazz.                                (f) Latin.
+                                    10                                        10                                        10
+                                     8                                         8                                        8
+                                     6                                         6                                        6
+                                    Similarity (%)4                          Similarity (%)4                           Similarity (%)4
+                                     2                                         2                                        2
+                                     0 0 4   8  12 16 20  24 28  32 36 40      0 0 4  8  12  16 20  24 28 32  36 40     0 0  4  8  12  16 20 24  28 32  36 40
+                                                    Interval (bar)                            Interval (bar)                            Interval (bar)
+                                                (g) R&B.                              (h) International.                           (i) Country.
+                                                                              10                                        10
+                                    10
+                                     8                                         8                                        8
+                                     6                                         6                                        6
+                                    Similarity (%)4                          Similarity (%)4                           Similarity (%)4
+                                     2                                         2                                        2
+                                     0 0 4   8  12 16 20  24 28  32 36 40      0 0 4  8  12  16 20  24 28 32  36 40     0 0  4  8  12  16 20 24  28 32  36 40
+                                                    Interval (bar)                            Interval (bar)                            Interval (bar)
+                                               (j) Reggae.                                (k) Blues.                                (l) Vocal.
+                                                                                                                        10
+                                    12
+                                    10                                                                                  8
+                                     8                                                                                  6
+                                     6                                                                                  4
+                                    Similarity (%)4                                                                    Similarity (%)
+                                     2                                                                                  2
+                                     0 0 4   8  12 16 20  24 28  32 36 40                                               0 0  4  8  12  16 20 24  28 32  36 40
+                                                    Interval (bar)                                                                      Interval (bar)
+                                                (m) Folk.                                                                         (n) New age.
+                                     Figure 7: The similarity distribution of the melody track of the different genres in TopMAGD.
+                                  To see whether the pattern still holds on other styles of music, we conduct the statistics on the
+                                  Symphonydataset [42] and exhibit the distribution in Figure 8. Since it is not easy to tell the melody
+                                  tracks for the symphony music, the reported result is calculated over all the tracks. Due to the
+                                  existence of some instruments that play more repetitions, e.g., drums, the differences among the
+                                  similarities over the intervals are not that significant, but it still presents the same tendency.
+                                      6http://www.ifs.tuwien.ac.at/mir/msd/TopMAGD.html
+                                                                                              15
+                             10
+                              8
+                              6
+                            Similarity (%)4
+                              2
+                              0 0       4       8        12      16       20      24       28      32       36      40
+                                                                       Interval (bar)
+                                      Figure 8: The similarity distribution of all tracks of the Symphony dataset.
+                          B DetailsofExperimentSettings
+                          B.1   Dataset Construction
+                          WeusetheLMDdataset[40]inourexperiments, and perform the following cleaning and processing
+                          to ensure the data quality:
+                          ‚Ä¢ TrackCompression: Wefirstcompressvarioustracksinto6tracks[10],namelysquaresynthesizer,
+                            piano, guitar, string, bass, and drum, with the square synthesizer playing the melody.
+                          ‚Ä¢ Note Position and Duration Normalization: To ensure that the bar splitting is correct and the
+                            duration of notes recorded in MIDI files conforms to the musically perfect duration (e.g., quarter
+                                                                                                       7
+                            notes held for exact 1 beat, 8-th notes held for exact 0.5 beat), we use MuseScore to normalize the
+                            note position and duration.
+                          ‚Ä¢ Data Filtering: Since this dataset is crawled from the Internet and contains many samples of low
+                            quality, we use a set of heuristic rules presented in Table 4 to filter them out and keep the samples
+                            of good quality and reasonable lengths.
+                          ‚Ä¢ Pitch Normalization: We normalize the pitches to transfer the tonality to ‚ÄúC major‚Äù or ‚ÄúA minor‚Äù.
+                                                            Table 4: Our filtering rules.
+                            Type         Rule                                                           Purpose
+                            Duplication Remove the duplicated samples that have the same duration and   To     remove
+                                         the same numbers of bars, notes, distinct note positions, and  the duplicated
+                                         instruments.                                                   samples.
+                            Musical      Onlykeepthesamplesoftimesignature 4/4.                         Toremove
+                            features     Onlykeepthesamplesthat have at least 2 instruments and have    musically
+                                         the square synthesizer (the melody track).                     complicated
+                                         Only keep the samples whose tempo values (the performance      or erroneous
+                                         speed) are not less than 24 and not larger than 200.           samples.
+                                         Only keep the samples whose pitch values are not less than 21
+                                         (A0) and not larger than 108 (C8).
+                                         Onlykeepthesampleswithmaximumnotedurationnotlonger
+                                         than 16 beats (4 bar).
+                                         Remove the samples that contain 4 or more empty bars, or the
+                                         pitch/duration values are the same for all the notes.
+                          Wethenrepresent each MIDI file into a sequence of tokens using a REMI-like [21] method. The
+                          bar lines are inferred automatically based on the time signature and the note onset positions. The
+                          statistics of the number of tokens and the number of bars are shown in Figure 9. The average number
+                             7https://musescore.org/
+                                                                        16
+                                                                                    10
+                                10
+                                8                                                    8
+                                6                                                    6
+                               Ratio (%)4                                          Ratio (%)4
+                                2                                                    2
+                                0                                                    0
+                                        1- 2048 2049- 4096 4097- 6144 6145- 8192 8193-1024010241-1228812289-1433614337-1638416385-1843218433-2048020481-2252822529-2457624577-2662426625-2867228673-3072030721-3276832769-3481634817-3686436865-3891238913-4096040961-4300843009-4505645057-47104     25- 32     33- 40     41- 48     49- 56     57- 64     65- 72     73- 80     81- 88     89- 96     97-104    105-112    113-120    121-128    129-136    137-144    145-152    153-160    161-168    169-176    177-184    185-192    193-200    201-208    209-216    217-224    225-232    233-240    241-248    249-256
+                                                  Number of tokens                                      Number of bars
+                                      (a) Statistics of number of tokens.                   (b) Statistics of number of bars.
+                             Figure 9: Length statistics. The vertical axes represent the ratios of those samples that are in the
+                             corresponding ranges.
+                             of tokens is 15,042, the average number of bars is 95, and the average number of tokens per bar
+                             is 158. Most samples are longer than 10,000 tokens, making it essential to design Museformer for
+                             efficiently modeling the long music sequences.
+                             B.2   Implementation Details
+                             Museformerisequipped with a dynamic sparse attention mechanism, which requires constructing
+                             distinct attention layouts for each sample according to the token ranges of bars. Since the dynamic
+                             sparse attention layout is not regular as sliding windows [14, 25] or fixed-length blocks [24], it
+                             is very challenging to leverage the GPU parallel computation techniques to speed up training and
+                             decrease the memory consumption. Note that we cannot pad each bar into a fixed-length sequence
+                             because the lengths of bars vary drastically, and it would introduce a lot of padding tokens that lead
+                             to unacceptable sequence lengths. To achieve an efficient implementation, we utilize a blocksparse
+                             method that splits the attention layouts into fixed-size square blocks, and only computes those blocks
+                             where there is at least one query-key/value pair that expects computation. In our implementation, all
+                             the summary tokens of the input bars are put before the music tokens to facilitate the computation,
+                             and thus the summarization step and the aggregation step in FC-Attention can be transferred into
+                             computing summary-to-all (summary tokens attending to summary tokens and music tokens) and
+                             music-to-all (music tokens attending to summary tokens and music tokens) attention, respectively, and
+                             their attention layouts are shown in Figure 10. We take the following 3 steps to compute each of the
+                             two attention processes: 1) attention layout generation to generate the full attention layout according
+                             to the bar ranges; 2) layout block-sparsification to transfer the full layout into a blocksprase layout; 3)
+                             blocksparse computation to compute the blocksparse multiplications and softmax operations.
+                             Attention Layout Generation        According to the bar splitting of each sample, we fill ‚Äútrue‚Äù on the
+                             corresponding areas of a Boolean tensor to construct the attention layout (shown on the left part of
+                             Figure 10). To speed up the construction, we collect the begin and end indices of the bars ahead of
+                             time and write a CUDA kernel to fill it for all the bars simultaneously.
+                             Layout Block-Sparsification       As visualized in Figure 10, the full attention layouts are block-
+                             sparsified with a fixed-size square (the block size set to 32 in our experiments), and diminished into
+                             the blocksparse layouts.
+                             Blocksparse Computation        Weleverage SparTA [41] to compute the blocksparse multiplications
+                             and softmax operations of attention. It only computes for the shaded areas on the blocksparse layouts
+                             in Figure 10.
+                             Since the attention layouts are the same for all the layers and heads in our setting, we only construct
+                             the attention layouts once for each sample, and cache them as well as the SparTA kernels for reuse,
+                             which saves a lot of memory and time.
+                                                                               17
+                                                                                         Ì†µÌ±•     Ì†µÌ±•     Ì†µÌ±•     Ì†µÌ±•     Ì†µÌ±•     Ì†µÌ±•     Ì†µÌ±•
+                                                                     Ì†µÌ±†     Ì†µÌ±†     Ì†µÌ±†
+                                                                                           1,1    1,2    1,3   2,1    2,2    3,1    3,2
+                                                                       1      2      3
+                                               Figure 10: Visualization of the blocksparse implementation. The full attention layouts are on the
+                                               left, which are exactly the same layouts shown in Figure 2b except that the summary tokens are put
+                                               before the music tokens to facilitate our implementation. If the block size is 2, the corresponding
+                                               blocksparse layouts are shown on the right. Note that it is only a toy example, and in real cases, the
+                                               sequences are much longer, and the sparsity of the layouts is much larger than what is depicted here.
+                                               B.3       Detailed Model and Training Configurations
+                                               For Museformer and all the compared models, the basic model and training configurations introduced
+                                               in ¬ß4.1 are set the same. For Museformer involves two separate attention processes (summarization
+                                               and aggregation), to make the parameter size comparable with other models, the projection matrices
+                                               for projecting the targets (i.e., queries) are shared for the two attention processes, and we add different
+                                               biases for summary tokens and music tokens respectively. It is the same for projecting the sources (i.e.,
+                                                                                                                                                                       Àú
+                                               keys and values), except that we use different projection parameters for SN(i) in Equation (3). All the
+                                               models have a comparable amount of trainable parameters: Museformer 16.1M, Music Transformer
+                                              16.6M, Transformer-XL 13.9M, Longformer 15.3M, Linear Transformer 13.2M, with acceptable
+                                               differences due to different architectures and implementations.
+                                              All the models are trained on 4 Nvidia V100 32GB GPUs with fp16. Since in Museformer, a token
+                                               directly attends to the tokens of 8 previous bars (the selected structure-related bars) and the current
+                                               bar via the fine-grained attention, for a fair comparison, we set the window sizes for Longformer
+                                               to 1,408, which is approximately the number of tokens that 9 bars contain. For Music Transformer
+                                               that uses full attention and cannot process long sequences at once, we chunk the input sequence into
+                                               blocks of fixed size 1,408, and manipulate the batch size and the update frequency to ensure that it is
+                                               updated the comparable number of times within each epoch as other models. For Transformer-XL,
+                                               the chunk size and the memory size are also set to 1,408. During inference, all the models are applied
+                                               to generate sequences not shorter than 2,048 and not longer than 20,480, until the end-of-sentence
+                                               token is generated. The top-k sampling is used, and k is set to 8.
+                                               C SimilarityDistributions of Generated Music
+                                               Comparedtoothermodels(the compared models and the ablation settings), the music generated by
+                                               Museformer has the similarity distribution most similar to that of the training data, as its SE reported
+                                               in Table 1 is the smallest. However, the value of SE may not comprehensively represent the structural
+                                               characteristics, so we further display and discuss about the specific distributions in this section.
+                                               Figure 11 shows the similarity distributions. We can observe that: 1) The distribution of Museformer
+                                               is very similar to that of the training data (shown in Figure 3). The quantity is close, and the contour
+                                               shows the same periodical pattern, i.e., the previous 2 bars, the previous 4-th bar as well as its
+                                               multipliers, have relatively large similarities. 2) The distributions of Music Transformer and Linear
+                                              Transformer show no periodical pattern. It implies that the Music Transformer model trained on short
+                                               sequences cannot generate well-structured music of long lengths, and Linear Transformer cannot well
+                                                                                                                                 18
+           capture the structure-related correlations even though its receptive field covers the whole sequence.
+           3) The distributions of Transformer-XL and Longformer show the tendency of the periodical pattern,
+           andthesimilarity decreases as the interval increases in general. It indicates that the two models whose
+           receptive fields only contain the most recent content have the ability to generate periodical repetitions
+           of short distances but fall short for long-term structures. 4) It seems that compared to the quantity of
+           the similarity, the contour (i.e., the periodical pattern) is more relevant to the human scoring on the
+           structure-related metrics. The distributions of Transformer-XL and Longformer show the pattern, and
+           their subjective scores on short-term and long-term structures (shown in Table 2) are relatively high,
+           and are higher than Music Transformer and Linear Transformer whose distributions fail to show the
+           periodical pattern. However, the quantity of the similarity may also influence human decisions. For
+           example, the quantities of the similarities of Transformer-XL are relatively high, which indicates
+           that too many repetitions are generated. For these samples, human scorers sometimes think them
+           annoying and eventually give lower scores on musicality. 5) The ablation setting, Museformer w/o
+           coarse-grained, has slightly larger SE compared to Museformer, and its distribution clearly shows the
+           periodical pattern. Thus, the coarse-grained attention does not contribute a lot to the music structures.
+           Thedistribution of Museformer w/o bar selection shows the tendency of the periodical pattern, and
+           the similarity decreases in general as the interval increases, similar to those of Transformer-XL and
+           Longformer. It indicates that the structure-related bars are contributory to generating music with both
+           short-term and long-term structures.
+                               19
+                                16
+                                14
+                                12
+                                10
+                                 8
+                               Similarity (%)6
+                                 4
+                                 2
+                                 0 0        4         8        12       16        20       24        28       32        36       40
+                                                                              Interval (bar)
+                                                                         (a) Museformer.
+                                16                                                   40
+                                14
+                                12                                                   30
+                                10
+                                 8                                                   20
+                               Similarity (%)6                                      Similarity (%)
+                                 4                                                   10
+                                 2
+                                 0 0  4    8   12  16  20   24  28   32  36  40       0 0  4    8   12  16   20  24  28   32  36  40
+                                                    Interval (bar)                                       Interval (bar)
+                                           (b) Music Transformer.                                 (c) Transformer-XL.
+                                20                                                   16
+                                18                                                   14
+                                16                                                   12
+                                14                                                   10
+                                12
+                                10                                                    8
+                               Similarity (%)8                                      Similarity (%)6
+                                 6                                                    4
+                                 4                                                    2
+                                 2
+                                 0 0  4    8   12  16  20   24  28   32  36  40       0 0  4    8   12  16   20  24  28   32  36  40
+                                                    Interval (bar)                                       Interval (bar)
+                                               (d) Longformer.                                  (e) Linear Transformer.
+                                16
+                                14                                                   20
+                                12
+                                10                                                   15
+                                 8                                                   10
+                               Similarity (%)6                                      Similarity (%)
+                                 4                                                    5
+                                 2
+                                 0 0  4    8   12  16  20   24  28   32  36  40       0 0  4    8   12  16   20  24  28   32  36  40
+                                                    Interval (bar)                                       Interval (bar)
+                                     (f) Museformer w/o coarse-grained.                    (g) Museformer w/o bar selection.
+                             Figure 11: The similarity distribution of the melody track of the music generated by different models.
+                                                                                20

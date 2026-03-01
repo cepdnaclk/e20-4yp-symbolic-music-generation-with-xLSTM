@@ -53,4 +53,6 @@ evaluation/bar_ssm_outputs/
 evaluation/bar_ssm_outputs_model3/
 
 # Extracted PDF text (derived files, not source of truth — regenerate with gs)
-paper/refs_text/
+notebooks/xLSTM-3/results/
+notebooks/xLSTM-4-recurrent-state/single-shot-generation/results/*/midi
+notebooks/xLSTM-4-recurrent-state/single-shot-generation/results/*/tokens
