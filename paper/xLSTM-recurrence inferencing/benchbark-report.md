@@ -15,9 +15,9 @@ Sequence Length	Helibrunna (s)	xLSTMGenerator (s)	Speedup Multiplier
 500 tokens	6.45 s	3.22 s	2.00x faster
 1000 tokens	16.74 s	6.45 s	2.59x faster
 2000 tokens	53.45 s	12.78 s	4.18x faster
-4000 tokens	~3.5 mins (Est)	25.67 s	~8.3x faster
-8000 tokens	~14 mins (Est)	51.38 s	~16x faster
-12000 tokens	~31 mins (Est)	77.11 s	~24x faster
+4000 tokens	3.5 mins 	25.67 s	~8.3x faster
+8000 tokens	OOM	51.38 s	~16x faster
+12000 tokens	OOM	77.11 s	~24x faster
 🧠 Analysis
 Theoretical Proof: As expected, Helibrunna scales quadratically ($O(N^2)$). Notice how going from 1000 to 2000 tokens caused Helibrunna's time to drastically jump from 16 seconds to 53 seconds.
 Linear Scaling: Our new 

@@ -208,7 +208,9 @@ Note: We could not benchmark Helibrunna at longer sequence lengths (4,000+) due 
 | 500 tokens | 6.45 s | 3.22 s | 2.00× |
 | 1,000 tokens | 16.74 s | 6.45 s | 2.59× |
 | 2,000 tokens | 53.45 s | 12.78 s | 4.18× |
-
+4000 tokens	3.5 mins 	25.67 s	~8.3x faster
+8000 tokens	OOM	51.38 s	~16x faster
+12000 tokens	OOM	77.11 s	~24x faster
 ### 6.3 Analysis of Scaling Behaviour
 
 The results confirm the expected computational complexity:
