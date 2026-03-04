@@ -1,0 +1,32 @@
+# .dockerignore — exclude files from Docker build context
+# Keeps the build fast and the image lean.
+
+# Checkpoint weights (mounted at runtime as a volume, not baked in)
+**/*.safetensors
+**/model.safetensors
+checkpoint-*/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Development and planning files
+*.md
+*.log
+*.yml
+*.yaml
+
+# Git
+.git/
+.gitignore
+
+# Temporary files
+*.tmp
+*.bak
